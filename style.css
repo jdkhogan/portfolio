@@ -1,0 +1,98 @@
+body::before {
+    display: block;
+    content: '';
+    height: 60px;
+}
+
+* {
+    --brand-color: #5a42f5;
+    --bs-light: #f0f0f0;
+    --standard-spacing: 3rem;
+}
+
+section + section {
+    padding-top: var(--standard-spacing);
+}
+
+.row + .row {
+    margin-top: var(--standard-spacing);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    color: var(--bs-light);
+}
+
+.text-brand {
+    color: var(--brand-color);
+}
+
+.btn-brand {
+    max-width: 300px;
+    background-color: var(--brand-color);
+    border: 2px solid var(--brand-color);
+    color: var(--bs-light);
+}
+
+.btn-brand:hover {
+    background-color: transparent;
+    border: 2px solid var(--brand-color);
+}
+
+.placeholder {
+    background-color: lightgray;
+    border-radius: 8px;
+    cursor: inherit;
+}
+
+.placeholder.landscape {
+    aspect-ratio: 16/9;
+}
+
+.placeholder.portrait {
+    aspect-ratio: 4/5;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--bs-light);
+}
+
+.bg-dark h1, .bg-dark p {
+    color: var(--bs-light);
+}
+
+
+.card .card-header,
+.card .card-footer {
+    border: none;
+}
+
+.card {
+    border: 1px solid lightgray;
+    margin-bottom: 1.5rem;
+}
+
+.card > *  {
+    background-color: transparent;
+}
+
+.card .card-header {
+    padding: 0;
+}
+
+.card .card-footer {
+    padding: 1.5rem 1rem;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer .animated-arrow {
+    transition: all ease-in 0.5s;
+    font-size: 1.5rem;
+}
+
+footer .animated-arrow:hover {
+    transform: scale(1.5);
+}
