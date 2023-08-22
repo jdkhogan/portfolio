@@ -8,17 +8,19 @@ body::before {
     --brand-color: #5a42f5;
     --bs-light: #f0f0f0;
     --standard-spacing: 3rem;
+    --bs-gutter-x: var(--standard-spacing);
+    --bs-nav-link-hover-color: var(--brand-color);
 }
 
 section + section {
-    padding-top: var(--standard-spacing);
+    padding-top: calc(3 * var(--standard-spacing));
 }
 
 .row + .row {
-    margin-top: var(--standard-spacing);
+    margin-top: calc(3 * var(--standard-spacing));
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, ul {
     margin-bottom: 1rem;
     color: var(--bs-light);
 }
@@ -82,6 +84,12 @@ section + section {
 
 .card .card-footer {
     padding: 1.5rem 1rem;
+}
+
+#projectDetails .logo {
+    max-width: 300px;
+    max-height: 200px;
+    margin-bottom: 1.5rem;
 }
 
 footer a {

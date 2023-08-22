@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jeremy Hogan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,7 +22,7 @@
                         <a href="#about" class="nav-link">About</a>  
                     </li>
                     <li class="nav-item">
-                        <a href="#projects" class="nav-link">Projects</a>  
+                        <a href="#projectDetails" class="nav-link">Projects</a>  
                     </li>
                 </ul>
             </div>
@@ -35,10 +35,22 @@
                 <div class="row">
                     <div class="col-12 col-md-8 d-flex flex-column">
                         <h1><span class="text-brand">Software Developer</span> with a deep marketing background</h1>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi inventore tenetur eos sint similique repudiandae.</p>
+                        <p class="lead">Dabbling for years, getting paid for it since 2021.</p>
+                        <div class="text-wrapper mb-5">
+                            <p>After starting my career in marketing and working across the gamut from client services and project management, to brand strategy and product development, I have been a full-time developer since December 2021.</p>
+                            <p>Through the years, I've worked on sites in Wordpress and other major CMSes, and taught myself Python and JavaScript to get by. When it was time to make the shift to software development as a career, LaunchCode was a fantastic springboard to help me understand full-stack development.</p> 
+                            <p>Currently working with: WordPress | PHP | JS | Bootstrap | SASS | React</p>
+                            <p>Experience in: Java | MySQL | Python | TypeScript | Tableau</p>
+                            <p>In a past life, I was fond of saying that I was <em>driven to find the story in the numbers</em>. I like to think I bring that same mindset with me when coding: What is the narrative here, and what am I doing to bring it to life?</p>
+                        </div>
+
+                        <a class="btn btn-brand btn-lg mt-auto" href="https://www.linkedin.com/in/jeremydhogan">
+                            Contact Me
+                        </a>
+                        <!-- To be implemented
                         <button class="btn btn-brand btn-lg mt-auto" data-bs-toggle="modal" data-bs-target="#contact">
                             Contact Me
-                        </button>
+                        </button> -->
                     </div>
                     <div class="col-12 col-md-4 d-none d-md-block">
                         <div class="placeholder portrait w-100"></div>
@@ -48,7 +60,8 @@
             </div>
         </section>
 
-        <section id="projects">
+        <!-- Section to be built out to introduce projects below -->
+        <section id="projects" class="d-none">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -132,59 +145,88 @@
                 </div>
             </div>
         </section>
-        <section id="project-details">
+
+        <section id="projectDetails">
             <div class="container">
                 <div class="row" id="project1">
                     <div class="col-12 col-md-6 text-col mt-4 mt-md-0">
-                        <h2 class="text-brand">Lorem, ipsum dolor.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita quae sunt enim explicabo, nisi ea non autem tenetur dolorum, veritatis odio quis illum corrupti unde voluptatibus repellat placeat ex voluptates reiciendis error dignissimos suscipit recusandae quam! Cupiditate, ratione. Enim ut tenetur fuga officiis odit exercitationem, at dolores. Repellat, harum!</p>
+                        <img class="logo" src="/assets/img/dd-logo.png" alt="Doctor Daughters">
+                        <p>Working with mission-driven clients is always a treat and Docter Daughters was great example. This client had a limited budget and great ideas, but what they needed most was a site that would easily grow with them. Some of the additional features I built out to help them included:</p>
+                        <ul>
+                            <li>CSS helper classes to manage content block widths and responsiveness
+                            </li>
+                            <li>Custom anchor fields for better page navigation</li>
+                            <li>Custom slider that automatically generates a testimonials slider or a generic slider based on inputs</li>
+                            <li>Custom angled gradient headers</li>
+                        </ul>
                     </div>
-                    <div class="col-12 col-md-6 order-first order-md-last">
+                    <div class="col-12 col-md-6 img-col order-first order-md-last">
                         <div class="placeholder landscape w-100"></div>
                     </div>
                 </div>
                 <div class="row" id="project2">
-                    <div class="col-12 col-md-6 order-first">
+                    <div class="col-12 col-md-6 img-col img-col order-first">
                         <div class="placeholder landscape w-100"></div>
                     </div>
                     <div class="col-12 col-md-6 text-col mt-4 mt-md-0">
-                        <h2 class="text-brand">Lorem, ipsum dolor.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita quae sunt enim explicabo, nisi ea non autem tenetur dolorum, veritatis odio quis illum corrupti unde voluptatibus repellat placeat ex voluptates reiciendis error dignissimos suscipit recusandae quam! Cupiditate, ratione. Enim ut tenetur fuga officiis odit exercitationem, at dolores. Repellat, harum!</p>
+                        <img class="logo" src="/assets/img/aifkk-logo.png" alt="All in for Kansas Kids">
+                        <p>Another instance where a little extra effort went a long way.</p>
+                        <ul>
+                            <li>Animated color-coded buttons and title accents</li>
+                            <li>Implemented custom tablist, two-column accordion, and nested accordion blocks</li>
+                            <li>Integrated mailchimp pre-footer form</li>
+                            <li>Built image size and positioning helper functions in SCSS</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row" id="project3">
                     <div class="col-12 col-md-6 text-col mt-4 mt-md-0">
-                        <h2 class="text-brand">Lorem, ipsum dolor.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita quae sunt enim explicabo, nisi ea non autem tenetur dolorum, veritatis odio quis illum corrupti unde voluptatibus repellat placeat ex voluptates reiciendis error dignissimos suscipit recusandae quam! Cupiditate, ratione. Enim ut tenetur fuga officiis odit exercitationem, at dolores. Repellat, harum!</p>
+                        <img class="logo" src="/assets/img/dwela-logo.png" alt="Dwela">
+                        <p!</p>
+                        <ul class="text-light">
+                            <li>Implemented custom typewriter and countup JS functions to enable animated text on homepage</li>
+                            <li>Built custom stats block with ability to set unit and positioning of unit</li>
+                            <li>Built custom homepage modal form integrated with Google Maps API</li>
+                        </ul>
                     </div>
-                    <div class="col-12 col-md-6 order-first order-md-last">
+                    <div class="col-12 col-md-6 img-col order-first order-md-last">
                         <div class="placeholder landscape w-100"></div>
                     </div>
                 </div>
                 <div class="row" id="project4">
-                    <div class="col-12 col-md-6 order-first">
+                    <div class="col-12 col-md-6 img-col img-col order-first">
                         <div class="placeholder landscape w-100"></div>
                     </div>
                     <div class="col-12 col-md-6 text-col mt-4 mt-md-0">
-                        <h2 class="text-brand">Lorem, ipsum dolor.</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita quae sunt enim explicabo, nisi ea non autem tenetur dolorum, veritatis odio quis illum corrupti unde voluptatibus repellat placeat ex voluptates reiciendis error dignissimos suscipit recusandae quam! Cupiditate, ratione. Enim ut tenetur fuga officiis odit exercitationem, at dolores. Repellat, harum!</p>
+                        <img class="logo" src="/assets/img/mlg-logo.png" alt="Midwest Land Group">
+                        <h2>Midwest Land Group</h2>
+                        <p>Site Refreshes present a unique challenge: how to evolve a website while taking advantage of what works?</p>
+                        <p>For MLG, we started with a new floating header and dynamic footer.</p>
+                        <ul>
+                            <li>Researched and implemented functionality to split menu on desktop screen sizes</li> 
+                            <li>Implemented dynamic footer text with built in defaults</li> 
+                            <li>Integrated fitText.jS to improve responsiveness</li>    
+                            <li>Built templated page in WordPress to power marketing campaign landing pages</li>    
+                        </ul>
                     </div>
                 </div>
                 <div class="row" id="project5">
                     <div class="col-12 col-md-6 text-col mt-4 mt-md-0">
-                        <h2 class="text-brand">Lorem, ipsum dolor.</h2>
+                        <img class="logo" src="/assets/img/CLIENTNAME" alt="CLIENTNAME">
+                        <h2>Lorem, ipsum dolor.</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita quae sunt enim explicabo, nisi ea non autem tenetur dolorum, veritatis odio quis illum corrupti unde voluptatibus repellat placeat ex voluptates reiciendis error dignissimos suscipit recusandae quam! Cupiditate, ratione. Enim ut tenetur fuga officiis odit exercitationem, at dolores. Repellat, harum!</p>
                     </div>
-                    <div class="col-12 col-md-6 order-first order-md-last">
+                    <div class="col-12 col-md-6 img-col order-first order-md-last">
                         <div class="placeholder landscape w-100"></div>
                     </div>
                 </div>
                 <div class="row" id="project6">
-                    <div class="col-12 col-md-6 order-first">
+                    <div class="col-12 col-md-6 img-col order-first">
                         <div class="placeholder landscape w-100"></div>
                     </div>
                     <div class="col-12 col-md-6 text-col mt-4 mt-md-0">
-                        <h2 class="text-brand">Lorem, ipsum dolor.</h2>
+                        <img class="logo" src="/assets/img/CLIENTNAME" alt="CLIENTNAME">
+                        <h2>Lorem, ipsum dolor.</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita quae sunt enim explicabo, nisi ea non autem tenetur dolorum, veritatis odio quis illum corrupti unde voluptatibus repellat placeat ex voluptates reiciendis error dignissimos suscipit recusandae quam! Cupiditate, ratione. Enim ut tenetur fuga officiis odit exercitationem, at dolores. Repellat, harum!</p>
                     </div>
                 </div>
@@ -201,7 +243,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.linkedin.com/in/jeremydhogan">LinkedIn</a>
                 </li>
-                <a href="#" class="ms-auto animated-arrow" alt="Back to Top">&#8679;</a>
+                <a href="#" class="animated-arrow text-brand ms-auto" alt="Back to Top">&#8679;</a>
             </ul>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
