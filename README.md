@@ -1,1 +1,3 @@
-# portfolio
+# Portfolio
+
+The goal is to use this portfolio site to not only showcase my experience, but to enhance the page with features and functionality over time.
