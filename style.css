@@ -55,14 +55,37 @@ section + section {
     aspect-ratio: 4/5;
 }
 
-.navbar-brand, .nav-link {
+@media (max-width: 576px) {
+    .navbar {
+        box-shadow: 0 1px 10px 0 #ffffff55
+    }
+}
+
+.navbar .container .row {
+    justify-content: space-between;
+    text-align: end;
+}
+
+.navbar .container .row .links-col,
+.navbar .container .row .links-col li:last-of-type{
+    padding-inline-end: 0;
+}
+.navbar-brand {
+    color: var(--bs-light);
+    /* fix py */
+}
+
+.navbar-toggler:not(:focus) {
+    border: none;
+}
+
+.nav-link {
     color: var(--bs-light);
 }
 
 .bg-dark h1, .bg-dark p {
     color: var(--bs-light);
 }
-
 
 .card .card-header,
 .card .card-footer {
