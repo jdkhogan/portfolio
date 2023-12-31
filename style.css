@@ -1,28 +1,52 @@
-body::before {
-    display: block;
-    content: '';
-    height: 60px;
-}
-
 * {
-    --brand-color: #5a42f5;
+    --brand-color: #4830ff;
     --bs-light: #f0f0f0;
-    --standard-spacing: 3rem;
+    --bs-dark: #0b0726;
+    --standard-spacing: 2rem;
     --bs-gutter-x: var(--standard-spacing);
     --bs-nav-link-hover-color: var(--brand-color);
 }
 
+section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
 section + section {
-    padding-top: calc(3 * var(--standard-spacing));
+    padding-top: calc(4 * var(--standard-spacing));
 }
 
 .row + .row {
     margin-top: calc(3 * var(--standard-spacing));
 }
 
+@media (min-width: 768px) {
+    .row + .row {
+        margin-top: calc(4 * var(--standard-spacing));
+    }
+}
+
+.bg-dark {
+    background-color: var(--bs-dark) !important;
+}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, ul {
     margin-bottom: 1rem;
     color: var(--bs-light);
+}
+.h1, .h2, h1, h2 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.h3, .h4, .h5, .h6, h3, h4, h5, h6, a, p, ul {
+    font-family: 'Inter', sans-serif;
 }
 
 .text-brand {
@@ -55,6 +79,7 @@ section + section {
     aspect-ratio: 4/5;
 }
 
+/* Nav */
 @media (max-width: 576px) {
     .navbar {
         box-shadow: 0 1px 10px 0 #ffffff55
@@ -63,14 +88,19 @@ section + section {
 
 .navbar .container .row {
     justify-content: space-between;
-    text-align: end;
 }
 
-.navbar .container .row .links-col,
+.navbar .container .row .links-col {
+    text-align: end;
+    padding-inline-end: 0;
+}
+
 .navbar .container .row .links-col li:last-of-type{
     padding-inline-end: 0;
 }
+
 .navbar-brand {
+    font-family: 'Josefin Sans', sans-serif;
     color: var(--bs-light);
     /* fix py */
 }
@@ -83,10 +113,8 @@ section + section {
     color: var(--bs-light);
 }
 
-.bg-dark h1, .bg-dark p {
-    color: var(--bs-light);
-}
 
+/* Project Intros */
 .card .card-header,
 .card .card-footer {
     border: none;
@@ -109,12 +137,65 @@ section + section {
     padding: 1.5rem 1rem;
 }
 
+
+/* Project Details */
+#projectDetails .img-col, 
+#projectDetails .video-col {
+    margin-top: 1.5rem;
+}
+
+#projectDetails .video-col {
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    #projectDetails .img-col, 
+    #projectDetails .video-col {
+        margin-top: 0;
+    }
+}
+
 #projectDetails .logo {
     max-width: 300px;
     max-height: 200px;
     margin-bottom: 1.5rem;
 }
 
+#projectDetails .carousel-item.carousel-item-start,
+#projectDetails .carousel-item.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#aifkkCarousel .carousel-item {
+    padding: 0 4rem;
+    height: 45vw;
+}
+
+@media (min-width: 992px) {
+    #aifkkCarousel .carousel-item {
+        height: 25vw;
+    }
+}
+
+#dwelaCarousel .carousel-item {
+    align-items: center;
+    padding: 0 3rem;
+}
+
+#dwelaCarousel .carousel-control-prev, 
+#dwelaCarousel .carousel-control-next {
+    width: 10%;
+}
+#dwelaCarousel .carousel-control-prev {
+    justify-content: start;
+}
+#dwelaCarousel .carousel-control-next {
+    justify-content: end;
+}
+
+/* Footer */
 footer a {
     text-decoration: none;
 }
