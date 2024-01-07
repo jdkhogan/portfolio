@@ -14,20 +14,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-dark">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 sticky-top">
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 sticky-top">
         <div class="container">
             <div class="row w-100">
                 <div class="col">
                     <a href="#" class="navbar-brand">Jeremy Hogan</a>
                 </div>
                 <div class="col links-col">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <button class="navbar-toggler" type="button" aria-label="Navbar toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
                         <span class="navbar-toggler-icon"></span>
                     </button>
         
                     <div class="collapse navbar-collapse" id="navmenu">
-                        <ul class="navbar-nav text-light ms-auto">
+                        <ul class="navbar-nav text-dark ms-auto">
                             <li class="nav-item">
                                 <a href="#about" class="nav-link">About</a>  
                             </li>
@@ -42,7 +42,7 @@
     </nav>
 
     <main>
-        <section id="about" class="text-light text-start">
+        <section id="about" class="text-dark text-start">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-8">
@@ -174,7 +174,7 @@
                         </ul>
                     </div>
                     <div class="col-12 col-lg-6 img-col">
-                        <img class="img-fluid rounded-2" src="assets/screengrabs/dd-slider.png" alt="Doctor Daughters slider">
+                        <img class="img-fluid" loading="lazy" src="assets/screengrabs/dd-slider.png" alt="Doctor Daughters slider">
                     </div>
                 </div>
                 <div class="row" id="project2">
@@ -185,16 +185,16 @@
                         <div id="aifkkCarousel" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="img-fluid rounded-2" src="assets/screengrabs/aifkk-hp.png" alt="All in for Kansas Kids homepage">
+                                    <img class="img-fluid" loading="lazy" src="assets/screengrabs/aifkk-hp.png" alt="All in for Kansas Kids homepage">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="img-fluid rounded-2" src="assets/screengrabs/aifkk-tablist.png" alt="All in for Kansas Kids tablist">
+                                    <img class="img-fluid" loading="lazy" src="assets/screengrabs/aifkk-tablist.png" alt="All in for Kansas Kids tablist">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="img-fluid rounded-2" src="assets/screengrabs/aifkk-nested.png" alt="All in for Kansas Kids nested accordion">
+                                    <img class="img-fluid" loading="lazy" src="assets/screengrabs/aifkk-nested.png" alt="All in for Kansas Kids nested accordion">
                                 </div>
                                 <div class="carousel-item">
-                                    <img class="img-fluid rounded-2" src="assets/screengrabs/aifkk-pathway.png" alt="All in for Kansas Kids career pathway">
+                                    <img class="img-fluid" loading="lazy" src="assets/screengrabs/aifkk-pathway.png" alt="All in for Kansas Kids career pathway">
                                 </div>
                             </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#aifkkCarousel" data-bs-slide="prev">
@@ -222,7 +222,7 @@
                         <img class="logo" src="assets/logos/logo-dwela.png" alt="Dwela">
                     </div>
                     <div class="col-12 col-lg-6 text-col">
-                        <ul class="text-light">
+                        <ul>
                             <li>Implemented custom typewriter and countup JS functions to enable animated text on homepage</li>
                             <li>Built custom stats block with ability to set unit and positioning of unit</li>
                             <li>Built custom homepage modal form integrated with Google Maps API</li>
@@ -232,13 +232,13 @@
                         <div id="dwelaCarousel" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <video class="rounded-2" width="100%" height="auto" controls muted>
+                                    <video preload="none" width="100%" height="auto" controls muted>
                                         <source src="assets/screengrabs/dwela-stats.webm" type="video/webm">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
                                 <div class="carousel-item">
-                                    <video class="rounded-2" width="100%" height="auto" controls muted>
+                                    <video preload="none" width="100%" height="auto" controls muted>
                                         <source src="assets/screengrabs/dwela-vid.webm" type="video/webm">
                                         Your browser does not support the video tag.
                                     </video>
@@ -260,7 +260,7 @@
                         <img class="logo" src="assets/logos/logo-mlg.png" alt="Midwest Land Group">
                     </div>
                     <div class="col-12 col-lg-6 video-col order-2">
-                        <video class="rounded-2" width="100%" height="auto" controls muted>
+                        <video preload="none" width="100%" height="auto" controls muted>
                             <source src="assets/screengrabs/mlg-vid.webm" type="video/webm">
                           Your browser does not support the video tag.
                           </video>
@@ -282,7 +282,7 @@
     </main>
 
     <footer class="mt-5 py-5 border-top">
-        <div class="container">
+        <div class="container d-flex">
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/jdkhogan">Github</a>
@@ -290,8 +290,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.linkedin.com/in/jeremydhogan">LinkedIn</a>
                 </li>
-                <a href="#" class="animated-arrow text-brand ms-auto" alt="Back to Top">&#8679;</a>
             </ul>
+            <a href="#" class="animated-arrow text-brand ms-auto" alt="Back to Top">&#8679;</a>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>

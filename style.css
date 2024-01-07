@@ -2,14 +2,18 @@
     --brand-color: #4830ff;
     --bs-light: #f0f0f0;
     --bs-dark: #0b0726;
-    --standard-spacing: 2rem;
-    --bs-gutter-x: var(--standard-spacing);
+    --std-spacing: 2rem;
+    --bs-gutter-x: var(--std-spacing);
     --bs-nav-link-hover-color: var(--brand-color);
 }
 
 section {
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+section:first-of-type {
+    scroll-margin-top: calc(3 * var(--std-spacing));
 }
 
 @media (min-width: 768px) {
@@ -20,26 +24,25 @@ section {
 }
 
 section + section {
-    padding-top: calc(4 * var(--standard-spacing));
+    padding-top: calc(4 * var(--std-spacing));
 }
 
 .row + .row {
-    margin-top: calc(3 * var(--standard-spacing));
+    margin-top: calc(3 * var(--std-spacing));
 }
 
 @media (min-width: 768px) {
     .row + .row {
-        margin-top: calc(4 * var(--standard-spacing));
+        margin-top: calc(4 * var(--std-spacing));
     }
 }
 
-.bg-dark {
-    background-color: var(--bs-dark) !important;
-}
+.bg-light { background-color: var(--bs-light) !important; }
+.bg-dark {  background-color: var(--bs-dark) !important; }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, ul {
     margin-bottom: 1rem;
-    color: var(--bs-light);
+    color: var(--bs-dark);
 }
 .h1, .h2, h1, h2 {
     font-family: 'Josefin Sans', sans-serif;
@@ -79,10 +82,14 @@ section + section {
     aspect-ratio: 4/5;
 }
 
+img:not(.logo), video {
+    border-radius: 10px;
+}
+
 /* Nav */
 @media (max-width: 576px) {
     .navbar {
-        box-shadow: 0 1px 10px 0 #ffffff55
+        box-shadow: 0 1px 10px 0 #00000033;
     }
 }
 
@@ -101,7 +108,7 @@ section + section {
 
 .navbar-brand {
     font-family: 'Josefin Sans', sans-serif;
-    color: var(--bs-light);
+    color: var(--bs-dark);
     /* fix py */
 }
 
@@ -110,7 +117,7 @@ section + section {
 }
 
 .nav-link {
-    color: var(--bs-light);
+    color: var(--bs-dark);
 }
 
 
@@ -168,6 +175,11 @@ section + section {
     justify-content: center;
 }
 
+#projectDetails .carousel-control-prev, 
+#projectDetails .carousel-control-next {
+    filter: invert(1);
+}
+
 #aifkkCarousel .carousel-item {
     padding: 0 4rem;
     height: 45vw;
@@ -175,7 +187,7 @@ section + section {
 
 @media (min-width: 992px) {
     #aifkkCarousel .carousel-item {
-        height: 25vw;
+        height: 28vw;
     }
 }
 
