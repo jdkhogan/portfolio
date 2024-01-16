@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jeremy Hogan's Portfolio Site">
     <title>Jeremy Hogan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/skeleton-legacy.css">
+    <link rel="stylesheet" href="assets/css/barebones.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://vjs.zencdn.net/8.6.1/video-js.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,57 +18,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 sticky-top">
+<body>
+    <nav class="navbar">
         <div class="container">
-            <div class="row w-100">
-                <div class="col">
-                    <a href="#" class="navbar-brand">Jeremy Hogan</a>
-                </div>
-                <div class="col links-col">
-                    <button class="navbar-toggler" type="button" aria-label="Navbar toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-        
-                    <div class="collapse navbar-collapse" id="navmenu">
-                        <ul class="navbar-nav text-dark ms-auto">
-                            <li class="nav-item">
-                                <a href="#about" class="nav-link">About</a>  
-                            </li>
-                            <li class="nav-item">
-                                <a href="#projectDetails" class="nav-link">Projects</a>  
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <a href="#" class="navbar-brand">Jeremy Hogan</a>
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="#about" class="navbar-link">About</a>  
+                </li>
+                <li class="navbar-item">
+                    <a href="#projectDetails" class="navbar-link">Projects</a>  
+                </li>
+            </ul>
         </div>
     </nav>
 
     <main>
-        <section id="about" class="text-dark text-start">
+        <section id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-8">
+                    <div class="eight columns">
                         <h1><span class="text-brand">Software Developer</span> with a deep marketing background</h1>
                         <p class="lead">Dabbling for years, getting paid for it since 2021.</p>
-                        <div class="text-wrapper mb-5">
+                        <div class="text-wrapper">
                             <p>After starting my career in marketing and working across the gamut from client services and project management, to brand strategy and product development, I have been a full-time developer since December 2021.</p>
                             <p>Through the years, I've worked on sites in Wordpress and other major CMSes, and taught myself Python and JavaScript to get by. When it was time to make the shift to software development as a career, LaunchCode was a fantastic springboard to help me understand full-stack development.</p> 
-                            <p class="text-center text-md-start">Currently working with: WordPress | PHP | JS | Bootstrap | SASS | React</p>
-                            <p class="text-center text-md-start">Experience in: Java | MySQL | Python | TypeScript | Tableau</p>
+                            <p class="centered">Currently working with: WordPress | PHP | JS | Bootstrap | SASS | React</p>
+                            <p class="centered">Experience in: Java | MySQL | Python | TypeScript | Tableau</p>
                             <p>In a past life, I was fond of saying that I was <em>driven to find the story in the numbers</em>. I like to think I bring that same mindset with me when coding: What is the narrative here, and what am I doing to bring it to life?</p>
                         </div>
 
-                        <a class="btn btn-brand btn-lg mt-auto" href="https://www.linkedin.com/in/jeremydhogan">
-                            Contact Me
-                        </a>
-                        <!-- To be reimplemented
-                        <button class="btn btn-brand btn-lg mt-auto" data-bs-toggle="modal" data-bs-target="#contact">
-                            Contact Me
-                        </button> -->
+                        <button class="button-primary" href="https://www.linkedin.com/in/jeremydhogan">Contact Me</button>
                     </div>
-                    <div class="col-12 col-md-4 d-none d-md-block">
+                    <div class="four columns" hidden>
                         <!-- <div class="placeholder portrait w-100"></div> -->
                     </div>
                 </div>
@@ -73,7 +58,7 @@
         </section>
 
         <!-- Section to be built out to introduce projects below -->
-        <section id="projects" class="d-none">
+        <section id="projects" hidden>
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -160,142 +145,152 @@
 
         <section id="projectDetails">
             <div class="container">
-                <div class="row" id="project1">
-                    <div class="col-12">
-                        <img class="logo" src="assets/logos/logo-dd.png" alt="Doctor Daughters">
-                    </div>
-                    <div class="col-12 col-lg-6 text-col">
-                        <p>Working with mission-driven clients is always a treat and Docter Daughters was great example. This client had a limited budget and great ideas, but what they needed most was a site that would easily grow with them. Some of the additional features I built out to help them included:</p>
-                        <ul>
-                            <li>CSS helper classes to manage content block widths and responsiveness
-                            </li>
-                            <li>Custom anchor fields for better page navigation</li>
-                            <li>Custom slider that automatically generates a testimonials slider or a generic slider based on inputs</li>
-                            <li>Custom angled gradient headers</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-lg-6 img-col">
-                        <img class="img-fluid" loading="lazy" src="assets/screengrabs/dd-slider.png" alt="Doctor Daughters slider">
-                    </div>
-                </div>
-                <div class="row" id="project2">
-                    <div class="col-12 offset-lg-6 col-lg-6">
-                        <img class="logo" src="assets/logos/logo-aifkk.png" alt="All in for Kansas Kids">
-                    </div>
-                    <div class="col-12 col-lg-6 img-col order-2">
-                        <div id="aifkkCarousel" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img class="img-fluid" loading="lazy" src="assets/screengrabs/aifkk-hp.png" alt="All in for Kansas Kids homepage">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="img-fluid" loading="lazy" src="assets/screengrabs/aifkk-tablist.png" alt="All in for Kansas Kids tablist">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="img-fluid" loading="lazy" src="assets/screengrabs/aifkk-nested.png" alt="All in for Kansas Kids nested accordion">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="img-fluid" loading="lazy" src="assets/screengrabs/aifkk-pathway.png" alt="All in for Kansas Kids career pathway">
-                                </div>
-                            </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#aifkkCarousel" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#aifkkCarousel" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                            </button>
+                <div class="project" id="project1">
+                    <div class="row">
+                        <div class="six columns">
+                            <img class="logo" src="assets/logos/logo-dd.png" alt="Doctor Daughters">
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6 text-col order-1 order-lg-2">
-                        <p>Another instance where a little extra effort went a long way.</p>
-                        <ul>
-                            <li>Animated color-coded buttons and title accents</li>
-                            <li>Implemented custom tablist, two-column accordion, and nested accordion blocks</li>
-                            <li>Integrated mailchimp pre-footer form</li>
-                            <li>Built image size and positioning helper functions in SCSS</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row" id="project3">
-                    <div class="col-12">
-                        <img class="logo" src="assets/logos/logo-dwela.png" alt="Dwela">
-                    </div>
-                    <div class="col-12 col-lg-6 text-col">
-                        <ul>
-                            <li>Implemented custom typewriter and countup JS functions to enable animated text on homepage</li>
-                            <li>Built custom stats block with ability to set unit and positioning of unit</li>
-                            <li>Built custom homepage modal form integrated with Google Maps API</li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-lg-6 img-col">
-                        <div id="dwelaCarousel" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <video preload="none" width="100%" height="auto" controls muted>
-                                        <source src="assets/screengrabs/dwela-stats.webm" type="video/webm">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                                <div class="carousel-item">
-                                    <video preload="none" width="100%" height="auto" controls muted>
-                                        <source src="assets/screengrabs/dwela-vid.webm" type="video/webm">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                            </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#dwelaCarousel" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#dwelaCarousel" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                            </button>
+                    <div class="row details">
+                        <div class="six columns text-col">
+                            <p>Working with mission-driven clients is always a treat and Docter Daughters was great example. This client had a limited budget and great ideas, but what they needed most was a site that would easily grow with them. Some of the additional features I built out to help them included:</p>
+                            <ul>
+                                <li>CSS helper classes to manage content block widths and responsiveness
+                                </li>
+                                <li>Custom anchor fields for better page navigation</li>
+                                <li>Custom slider that automatically generates a testimonials slider or a generic slider based on inputs</li>
+                                <li>Custom angled gradient headers</li>
+                            </ul>
+                        </div>
+                        <div class="six columns img-col">
+                            <img class="u-max-full-width" loading="lazy" src="assets/screengrabs/dd-slider.png" alt="Doctor Daughters slider">
                         </div>
                     </div>
                 </div>
-                <div class="row" id="project4">
-                    <div class="col-12 offset-lg-6 col-lg-6">
-                        <img class="logo" src="assets/logos/logo-mlg.png" alt="Midwest Land Group">
+                <div class="project right" id="project2">
+                    <div class="row">
+                        <div class="six offset-by-six columns">
+                            <img class="logo" src="assets/logos/logo-aifkk.png" alt="All in for Kansas Kids">
+                        </div>
                     </div>
-                    <div class="col-12 col-lg-6 video-col order-2">
-                        <video preload="none" width="100%" height="auto" controls muted>
-                            <source src="assets/screengrabs/mlg-vid.webm" type="video/webm">
-                          Your browser does not support the video tag.
-                          </video>
+                    <div class="row details">
+                        <div class="six columns img-col">
+                            <div class="swiper" id="aifkkCarousel">
+                                <div class="swiper-controls">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="assets/screengrabs/aifkk-hp.png" alt="All in for Kansas Kids homepage">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/screengrabs/aifkk-tablist.png" alt="All in for Kansas Kids tablist">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/screengrabs/aifkk-nested.png" alt="All in for Kansas Kids nested accordion">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/screengrabs/aifkk-pathway.png" alt="All in for Kansas Kids career pathway">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="six columns text-col">
+                            <p>Another instance where a little extra effort went a long way.</p>
+                            <ul>
+                                <li>Animated color-coded buttons and title accents</li>
+                                <li>Implemented custom tablist, two-column accordion, and nested accordion blocks</li>
+                                <li>Integrated mailchimp pre-footer form</li>
+                                <li>Built image size and positioning helper functions in SCSS</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-12 col-lg-6 text-col order-1 order-lg-2">
-                        <h2>Midwest Land Group</h2>
-                        <p>Site Refreshes present a unique challenge: how to evolve a website while taking advantage of what works?</p>
-                        <p>For MLG, we started with a new floating header and dynamic footer.</p>
-                        <ul>
-                            <li>Researched and implemented functionality to split menu on desktop screen sizes</li> 
-                            <li>Implemented dynamic footer text with built in defaults</li> 
-                            <li>Integrated fitText.jS to improve responsiveness</li>    
-                            <li>Built templated page in WordPress to power marketing campaign landing pages</li>    
-                        </ul>
+                </div>
+                <div class="project" id="project3">
+                    <div class="row">
+                        <div class="six columns">
+                            <img class="logo" src="assets/logos/logo-dwela.png" alt="Dwela">
+                        </div>
+                    </div>
+                    <div class="row details">
+                        <div class="six columns text-col">
+                            <ul>
+                                <li>Implemented custom typewriter and countup JS functions to enable animated text on homepage</li>
+                                <li>Built custom stats block with ability to set unit and positioning of unit</li>
+                                <li>Built custom homepage modal form integrated with Google Maps API</li>
+                            </ul>
+                        </div>
+                        <div class="six columns img-col">
+                            <div class="swiper" id="dwelaCarousel">
+                                <div class="swiper-controls">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <video preload="none" width="100%" height="auto" controls muted>
+                                            <source src="assets/screengrabs/dwela-stats.webm" type="video/webm">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <video preload="none" width="100%" height="auto" controls muted>
+                                            <source src="assets/screengrabs/dwela-vid.webm" type="video/webm">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project right" id="project4">
+                    <div class="row">
+                        <div class="six offset-by-six columns">
+                            <img class="logo" src="assets/logos/logo-mlg.png" alt="Midwest Land Group">
+                        </div>
+                    </div>
+                    <div class="row details">
+                        <div class="six columns video-col">
+                            <video preload="none" width="100%" height="auto" controls muted>
+                                <source src="assets/screengrabs/mlg-vid.webm" type="video/webm">
+                              Your browser does not support the video tag.
+                              </video>
+                        </div>
+                        <div class="six columns text-col">
+                            <h2>Midwest Land Group</h2>
+                            <p>Site Refreshes present a unique challenge: how to evolve a website while taking advantage of what works?</p>
+                            <p>For MLG, we started with a new floating header and dynamic footer.</p>
+                            <ul>
+                                <li>Researched and implemented functionality to split menu on desktop screen sizes</li> 
+                                <li>Implemented dynamic footer text with built in defaults</li> 
+                                <li>Integrated fitText.jS to improve responsiveness</li>    
+                                <li>Built templated page in WordPress to power marketing campaign landing pages</li>    
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="mt-5 py-5 border-top">
-        <div class="container d-flex">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/jdkhogan">Github</a>
+    <footer>
+        <div class="container">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="https://github.com/jdkhogan">Github</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.linkedin.com/in/jeremydhogan">LinkedIn</a>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="https://www.linkedin.com/in/jeremydhogan">LinkedIn</a>
                 </li>
             </ul>
-            <a href="#" class="animated-arrow text-brand ms-auto" alt="Back to Top">&#8679;</a>
+            <a href="#" class="animated-arrow" alt="Back to Top">&#8679;</a>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
     </footer>
 </body>
 </html>
