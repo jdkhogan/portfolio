@@ -35,7 +35,6 @@ section + section {
     }
 }
 
-
 @media (max-width: 900px) {
     .row {
         gap: 0.8rem;
@@ -205,8 +204,13 @@ footer .container {
 
 /* Project Details */
 @media (max-width: 900px) {
-    #projectDetails .project.right .details .img-col {
+    #projectDetails .project.right .img-col,
+    #projectDetails .project.right .video-col {
         order: 2;
+    }
+
+    #projectDetails .project:not(.right) .text-col {
+        margin-bottom: 0.8rem;
     }
 }
 
@@ -233,12 +237,6 @@ footer .container {
 }
 
 /* Project Details Carousel */
-@media (min-width: 900px) {
-    #projectDetails .swiper {
-        margin-top: -30px;
-    }
-}
-
 #projectDetails .swiper-slide {
     display: flex;
     flex-direction: column;
@@ -262,6 +260,36 @@ footer .container {
     position: relative;
     margin-top: 0;
 }
+
+@media (max-width: 900px) {
+    #projectDetails .swiper {
+        max-width: 100vw;
+        margin-left: -20px;
+    }
+
+    #projectDetails .swiper-controls {
+        margin-left: 10px;
+        justify-content: flex-start;
+    }
+
+
+    #projectDetails .swiper img {
+        margin: 0 20px;
+    }
+
+    #projectDetails .swiper video {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 900px) {
+    #projectDetails .swiper {
+        margin-top: -30px;
+    }
+}
+
+
 
 
 /* Footer */
