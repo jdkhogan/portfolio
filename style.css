@@ -73,7 +73,13 @@ ul {
     color: var(--accent-color);
 }
 
-button.button-primary {
+.button {
+    height: unset;
+    min-height: 38px;
+    padding-block: 1rem;
+}
+
+.button.button-primary {
     border: 2px solid var(--accent-color);
     max-width: 300px;
     font-size: 2rem;
@@ -82,7 +88,7 @@ button.button-primary {
     line-height: 1;
 }
 
-button.button-primary:hover {
+.button.button-primary:hover {
     background-color: transparent;
     color: var(--accent-color);
 }
