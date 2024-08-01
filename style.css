@@ -63,6 +63,11 @@ section + section {
     font-family: 'Inter', sans-serif;
 }
 
+a, a:hover,
+li, li:hover {
+    transition: all ease-in-out 0.3s;
+}
+
 ul {
     list-style-type: disc;
     margin-bottom: 0;
@@ -112,7 +117,7 @@ img:not(.logo), video {
 
 
 /* Nav */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .navbar {
         box-shadow: 0 1px 10px 0 #00000033;
         position: sticky;
@@ -130,8 +135,7 @@ footer .container {
 }
 
 .navbar .container {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-block: 2rem;
     background-color: var(--theme-hue);
 }
 
@@ -144,12 +148,15 @@ footer .container {
 }
 
 .container .navbar-list li {
-    padding: 0 8px;
+    padding: 0 1rem;
     margin-bottom: 0;
+    font-size: 1.4rem;
+    line-height: clamp(2rem, 0.8rem + 3.2vw, 3.2rem);
 }
 
-.container .navbar-list li:last-of-type{
-    padding-inline-end: 0;
+.container .navbar-list li:hover {
+    background-color: var(--accent-color);
+    color: var(--theme-hue);
 }
 
 .navbar-link, .navbar-brand {
@@ -157,9 +164,15 @@ footer .container {
     color: var(--text-color-normal)
 }
 
+.container .navbar-list li:hover .navbar-link {
+    color: var(--theme-hue);
+}
+
+
 .navbar-brand {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 2rem;
+    font-size: clamp(2rem, 0.8rem + 3.2vw, 3.2rem);
+    line-height: 1;
 }
 
 
@@ -210,13 +223,13 @@ footer .container {
 
 /* Project Details */
 .project {
-    margin: -20px;
-    padding: 20px;
+    margin-block: -24px;
+    padding: 24px;
     backdrop-filter: blur(10px);
     background-image: linear-gradient(75deg, #8882, #fff2);
-    border-radius: 20px;
-    box-shadow: 0px 5px 5px 5px #e0e0e0;
-    background-size: 20px;
+    border-radius: 24px;
+    box-shadow: 0px 6px 6px 6px #e0e0e0;
+    background-size: 24px;
 }
 
 @media (max-width: 900px) {
