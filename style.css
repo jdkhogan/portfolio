@@ -13,13 +13,7 @@
 }
 
 @keyframes project-scale {
-    from {
-        filter: blur(5px);
-    }
-    25% {
-        filter: blur(0);
-    }
-    75% { 
+    from { 
         transform: scale(1); 
         filter: blur(0);
     }
@@ -27,6 +21,15 @@
         transform: scale(0.75); 
         filter: blur(5px);
     }
+}
+
+@keyframes snap-in {
+    0% {    opacity: 0; transform: translateY(100%); }
+    100% {  opacity: 1; transform: translateY(0%); }
+}
+@keyframes snap-out {
+    0% {    opacity: 1; transform: translateY(0%); }
+    100% {  opacity: 0; transform: translateY(100%); }
 }
 
 
@@ -245,6 +248,7 @@ footer .container {
     .project {
         animation: project-scale linear both;
         animation-timeline: view();
+        animation-range: cover 75% cover 100%;
     }
 }
 
