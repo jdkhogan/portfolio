@@ -45,7 +45,7 @@
                         <p class="lead">Dabbling for years, getting paid for it since 2021.</p>
                         <div class="text-wrapper">
                             <p>After starting my career in marketing and working across the gamut from client services and project management, to brand strategy and product development, I have been a full-time developer since December 2021.</p>
-                            <p>Through the years, I've worked on sites in Wordpress and other major CMSes, and taught myself Python and JavaScript to get by. When it was time to make the shift to software development as a career, LaunchCode was a fantastic springboard to help me understand full-stack development.</p> 
+                            <p>Through the years, I've worked on sites in Wordpress and other major CMSes, and taught myself Python and JavaScript to get by. When it was time to make the shift to software development as a career, <a href="https://www.launchcode.org/">LaunchCode</a> was a fantastic springboard to help me understand full-stack development.</p> 
                             <p class="centered">Currently working with: WordPress | PHP | JS | Bootstrap | SASS | React</p>
                             <p class="centered">Experience in: Java | MySQL | Python | TypeScript | Tableau</p>
                             <p>In a past life, I was fond of saying that I was <em>driven to find the story in the numbers</em>. I like to think I bring that same mindset with me when coding: What is the narrative here, and what am I doing to bring it to life?</p>
@@ -148,7 +148,45 @@
 
         <section id="projectDetails">
             <div class="container">
-                <div class="project" id="project1">
+                <div class="project right" id="prescotts">
+                    <div class="row">
+                        <div class="six offset-by-six columns">
+                            <a href="https://prescottsmed.com/">
+                                <img class="logo" src="assets/logos/logo-prescotts.png" alt="Prescott's Med">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row details">
+                        <div class="six columns img-col">
+                            <div class="swiper" id="prescottsCarousel">
+                                <div class="swiper-controls">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="u-max-full-width" loading="lazy" src="assets/screengrabs/prescotts-events.png" alt="Prescott's Event Feed">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/prescotts-vid-thumb.png" controls muted>
+                                            <source src="assets/screengrabs/prescotts-vid.webm" type="video/webm">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="six columns text-col">
+                            <p>A client in the medical supply field needed a new site for their group of brands, while also rolling out updates to individual brands, taking a templated approach. Several vital behind-the-scenes pieces of functionality, including:</p>
+                            <ul>
+                                <li>A Group Events feed that uses custom RSS and category tags to power event calendars on group site and on websites of multiple group brands
+                                </li>
+                                <li>Custom navigation to open brand tab in tablist, defaulting to a link to standalone brand website as a fallback for users without JavaScript enabled</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" id="wireco">
                     <div class="row">
                         <div class="six columns">
                             <a href="https://www.wireco.com">
@@ -173,7 +211,7 @@
                                 </div>
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <video preload="none" width="100%" height="auto" controls muted>
+                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/wireco-vid-thumb.png" controls muted>
                                             <source src="assets/screengrabs/wireco-hp.webm" type="video/webm">
                                             Your browser does not support the video tag.
                                         </video>
@@ -189,7 +227,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project right" id="project2">
+                <div class="project right" id="americo">
                     <div class="row">
                         <div class="six offset-by-six columns">
                             <a href="https://www.americo.com">
@@ -207,7 +245,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project" id="project3">
+                <div class="project" id="doctorDaughters">
                     <div class="row">
                         <div class="six columns">
                             <a href="https://doctordaughters.com/">
@@ -231,7 +269,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project right" id="project4">
+                <div class="project right" id="aifkk">
                     <div class="row">
                         <div class="six offset-by-six columns">
                             <a href="https://allinforkansaskids.org/">
@@ -268,13 +306,13 @@
                             <ul>
                                 <li>Animated color-coded buttons and title accents</li>
                                 <li>Implemented custom tablist, two-column accordion, and nested accordion blocks</li>
-                                <li>Integrated mailchimp pre-footer form</li>
+                                <li>Integrated Mailchimp pre-footer form</li>
                                 <li>Built image size and positioning helper functions in SCSS</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="project" id="project5">
+                <div class="project" id="dwela">
                     <div class="row">
                         <div class="six columns">
                             <img class="logo" src="assets/logos/logo-dwela.png" alt="Dwela">
@@ -296,13 +334,13 @@
                                 </div>
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <video preload="none" width="100%" height="auto" controls muted>
+                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/dwela-stats-thumb.png" controls muted>
                                             <source src="assets/screengrabs/dwela-stats.webm" type="video/webm">
                                             Your browser does not support the video tag.
                                         </video>
                                     </div>
                                     <div class="swiper-slide">
-                                        <video preload="none" width="100%" height="auto" controls muted>
+                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/dwela-vid-thumb.png" controls muted>
                                             <source src="assets/screengrabs/dwela-vid.webm" type="video/webm">
                                             Your browser does not support the video tag.
                                         </video>
@@ -312,7 +350,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project right" id="project6">
+                <div class="project right" id="mlg">
                     <div class="row">
                         <div class="six offset-by-six columns">
                             <img class="logo" src="assets/logos/logo-mlg.png" alt="Midwest Land Group">
@@ -320,7 +358,7 @@
                     </div>
                     <div class="row details">
                         <div class="six columns video-col">
-                            <video preload="none" width="100%" height="auto" controls muted>
+                            <video preload="none" width="100%" height="auto" poster="assets/screengrabs/mlg-vid-thumb.png" controls muted>
                                 <source src="assets/screengrabs/mlg-vid.webm" type="video/webm">
                               Your browser does not support the video tag.
                               </video>
