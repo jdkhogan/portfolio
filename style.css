@@ -18,9 +18,15 @@
         transform: scale(1); 
         filter: blur(0);
     }
+    10% {
+        transform: scale(1.01);
+        filter: blur(5px);
+    }
+    20% {
+        transform: scale(1); 
+    }
     to { 
         transform: scale(0.75); 
-        filter: blur(5px);
     }
 }
 
