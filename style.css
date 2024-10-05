@@ -286,7 +286,7 @@ footer .container {
 .project {
     container-type: inline-size;
     margin: 0 auto;
-    padding: 3%;
+    padding: 2rem;
     border-radius: 4px;
     box-shadow: 0px 6px 6px 6px #e0e0e0;
 }
@@ -297,6 +297,9 @@ footer .container {
 }
 
 @media (min-width: 900px) {
+    .project {
+        padding: 3%;
+    }
     .project + .project {
         margin-top: calc(2 * var(--std-spacing));
     }
@@ -342,6 +345,12 @@ footer .container {
     }
 }
 
+.project#aifkk {
+    .logo {
+        filter: drop-shadow(2px 2px 4px #1a2857)
+    }
+}
+
 .project-card .swiper {
     display: flex;
     flex-direction: column;
@@ -370,14 +379,8 @@ footer .container {
         margin-top: 0;
     }
 
-    img {
+    img, video {
         margin: 0;
-        margin-left: 20px;
-    }
-
-     video {
-        width: calc(100% - 20px);
-        margin-left: 20px;
     }
 }
 
@@ -401,15 +404,7 @@ footer .container {
 
         .swiper-controls {
             margin-top: 0;
-        }
-
-        img {
-            margin-right: 20px;
-        }
-    
-         video {
-            width: calc(100% - 40px);
-            margin-left: 20px;
+            /* margin-inline-start: 10px; */
         }
     }
 }
@@ -423,7 +418,6 @@ footer .container {
             .swiper-controls {
                 justify-content: flex-end;
                 margin-inline-start: 0;
-                /* margin-inline-end: 1.6rem; */
             }
         }
     }
