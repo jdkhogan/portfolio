@@ -13,7 +13,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,13 +21,13 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="navbar-brand">Jeremy Hogan</a>
+            <a href="./index.html" class="navbar-brand">Jeremy Hogan</a>
             <ul class="navbar-list">
                 <li class="navbar-item">
-                    <a href="#about" class="navbar-link">About</a>  
+                    <a href="./index.html#about" class="navbar-link">About</a>  
                 </li>
                 <li class="navbar-item">
-                    <a href="#projectDetails" class="navbar-link">Projects</a>  
+                    <a href="./index.html#projectDetails" class="navbar-link">Projects</a>  
                 </li>
                 <li class="navbar-item">
                     <a href="https://www.linkedin.com/in/jeremydhogan" class="navbar-link">Contact</a>  
@@ -41,13 +41,13 @@
             <div class="container">
                 <div class="row">
                     <div class="eight columns">
-                        <h1><span class="text-brand">Software Developer</span> with a deep marketing background</h1>
-                        <p class="lead">Dabbling for years, getting paid for it since 2021.</p>
+                        <h1><span class="text-brand">Front-end Developer</span> with a deep marketing background</h1>
+                        <!-- <p class="lead">Dabbling for years, getting paid for it since 2021.</p> -->
                         <div class="text-wrapper">
                             <p>After starting my career in marketing and working across the gamut from client services and project management, to brand strategy and product development, I have been a full-time developer since December 2021.</p>
                             <p>Through the years, I've worked on sites in Wordpress and other major CMSes, and taught myself Python and JavaScript to get by. When it was time to make the shift to software development as a career, <a href="https://www.launchcode.org/">LaunchCode</a> was a fantastic springboard to help me understand full-stack development.</p> 
-                            <p class="centered">Currently working with: WordPress | PHP | JS | Bootstrap | SASS | React</p>
-                            <p class="centered">Experience in: Java | MySQL | Python | TypeScript | Tableau</p>
+                            <p class="centered tw-pretty"><strong>Currently working with</strong>: WordPress | PHP | JS | React | MySQL&nbsp;| Bootstrap&nbsp;| SASS</p>
+                            <p class="centered tw-pretty"><strong>Experience in</strong>: Divi | Elementor | WPBakery | Java&nbsp;| TypeScript&nbsp;| Python&nbsp;| Tailwind | REST | GraphQL | Google Analytics </p>
                             <p>In a past life, I was fond of saying that I was <em>driven to find the story in the numbers</em>. I like to think I bring that same mindset with me when coding: What is the narrative here, and what am I doing to bring it to life?</p>
                         </div>
 
@@ -148,231 +148,220 @@
 
         <section id="projectDetails">
             <div class="container">
-                <div class="project right" id="prescotts">
-                    <div class="row">
-                        <div class="six offset-by-six columns">
-                            <a href="https://prescottsmed.com/">
-                                <img class="logo" src="assets/logos/logo-prescotts.png" alt="Prescott's Med">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row details">
-                        <div class="six columns img-col">
-                            <div class="swiper" id="prescottsCarousel">
-                                <div class="swiper-controls">
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-button-next"></div>
+                <div class="row">
+                    <div class="twelve columns">
+                        <div class="project" id="prescotts">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <a class="project-link" href="https://prescottsmed.com/">
+                                        <img class="logo" src="assets/logos/logo-prescotts.png" alt="Prescott's Med">
+                                    </a>
                                 </div>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img class="u-max-full-width" loading="lazy" src="assets/screengrabs/prescotts-events.png" alt="Prescott's Event Feed">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/prescotts-vid-thumb.png" controls muted>
-                                            <source src="assets/screengrabs/prescotts-vid.webm" type="video/webm">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                <div class="screengrabs-wrapper">
+                                    <div class="swiper" id="prescottsCarousel">
+                                        <div class="swiper-controls">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img class="u-max-full-width" loading="lazy" src="assets/screengrabs/prescotts-events.png" alt="Prescott's Event Feed">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <video preload="none" width="100%" height="auto" poster="assets/screengrabs/prescotts-vid-thumb.png" controls muted>
+                                                    <source src="assets/screengrabs/prescotts-vid.webm" type="video/webm">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="six columns text-col">
-                            <p>A client in the medical supply field needed a new site for their group of brands, while also rolling out updates to individual brands, taking a templated approach. Several vital behind-the-scenes pieces of functionality, including:</p>
-                            <ul>
-                                <li>A Group Events feed that uses custom RSS and category tags to power event calendars on group site and on websites of multiple group brands
-                                </li>
-                                <li>Custom navigation to open brand tab in tablist, defaulting to a link to standalone brand website as a fallback for users without JavaScript enabled</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" id="wireco">
-                    <div class="row">
-                        <div class="six columns">
-                            <a href="https://www.wireco.com">
-                                <img class="logo" src="assets/logos/logo-wireco.png" alt="WireCo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row details">
-                        <div class="six columns text-col">
-                            <p>A great opportunity for collaboration with outside designers. Animation and responsiveness settings throughout the site provide an unexpectedly engaging experience for an infrastructure giant.</p>
-                            <ul>
-                                <li>Oversized typography and animations that work seamlessly across screensizes</li>
-                                <li>Translation tool with custom formatting to account for longer words in certain langauges</li>
-                                <li>Product catalog with custom ACF backend</li>
-                            </ul>
-                        </div>
-                        <div class="six columns img-col">
-                            <div class="swiper" id="wirecoCarousel">
-                                <div class="swiper-controls">
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-button-next"></div>
-                                </div>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/wireco-vid-thumb.png" controls muted>
-                                            <source src="assets/screengrabs/wireco-hp.webm" type="video/webm">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/screengrabs/wireco-made-frontend.png" alt="WireCo Made in USA front end">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/screengrabs/wireco-made-backend.png" alt="WireCo Made in USA back end">
-                                    </div>
+                                <div class="content-wrapper">
+                                    <p>A client in the medical supply field needed a new site for their group of brands, while also rolling out updates to individual brands, taking a templated approach. Several vital behind-the-scenes pieces of functionality, including:</p>
+                                    <ul>
+                                        <li>A Group Events feed that uses custom RSS and category tags to power event calendars on group site and on websites of multiple group brands
+                                        </li>
+                                        <li>Custom navigation to open brand tab in tablist, defaulting to a link to standalone brand website as a fallback for users without JavaScript enabled</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="project right" id="americo">
-                    <div class="row">
-                        <div class="six offset-by-six columns">
-                            <a href="https://www.americo.com">
-                                <img class="logo" src="assets/logos/logo-americo.png" alt="Americo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row details">
-                        <div class="six columns img-col">
-                            <img class="u-max-full-width" loading="lazy" src="assets/screengrabs/americo-hp.png" alt="Americo homepage">
-                        </div>
-                        <div class="six columns text-col">
-                            <p>Responsible for common ADA / accessibility issues and fixes - particularly for mega menus and forms. Working on Americo really helped me to cement my understanding of semantic HTML/CSS and simple JS fixes.</p>
-                            <p>Strong focus on accessibility, usability, responsiveness, and maintainability.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" id="doctorDaughters">
-                    <div class="row">
-                        <div class="six columns">
-                            <a href="https://doctordaughters.com/">
-                                <img class="logo" src="assets/logos/logo-dd.png" alt="Doctor Daughters">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row details">
-                        <div class="six columns text-col">
-                            <p>Working with mission-driven clients is always a treat and Doctor Daughters was great example. This client had a limited budget and great ideas, but what they needed most was a site that would easily grow with them. Some of the additional features I built out to help them included:</p>
-                            <ul>
-                                <li>CSS helper classes to manage content block widths and responsiveness
-                                </li>
-                                <li>Custom anchor fields for better page navigation</li>
-                                <li>Custom slider that automatically generates a testimonials slider or a generic slider based on inputs</li>
-                                <li>Custom angled gradient headers</li>
-                            </ul>
-                        </div>
-                        <div class="six columns img-col">
-                            <img class="u-max-full-width" loading="lazy" src="assets/screengrabs/dd-slider.png" alt="Doctor Daughters slider">
-                        </div>
-                    </div>
-                </div>
-                <div class="project right" id="aifkk">
-                    <div class="row">
-                        <div class="six offset-by-six columns">
-                            <a href="https://allinforkansaskids.org/">
-                                <img class="logo" src="assets/logos/logo-aifkk.png" alt="All in for Kansas Kids">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row details">
-                        <div class="six columns img-col">
-                            <div class="swiper" id="aifkkCarousel">
-                                <div class="swiper-controls">
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-button-next"></div>
+                        <div class="project" id="wireco">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <a class="project-link" href="https://www.wireco.com">
+                                        <img class="logo" src="assets/logos/logo-wireco.png" alt="WireCo">
+                                    </a>
                                 </div>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="assets/screengrabs/aifkk-hp.png" alt="All in for Kansas Kids homepage">
+                                <div class="screengrabs-wrapper">
+                                    <div class="swiper" id="wirecoCarousel">
+                                        <div class="swiper-controls">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <video preload="none" width="100%" height="auto" poster="assets/screengrabs/wireco-vid-thumb.png" controls muted>
+                                                    <source src="assets/screengrabs/wireco-hp.webm" type="video/webm">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="assets/screengrabs/wireco-made-frontend.png" alt="WireCo Made in USA front end">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="assets/screengrabs/wireco-made-backend.png" alt="WireCo Made in USA back end">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/screengrabs/aifkk-tablist.png" alt="All in for Kansas Kids tablist">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/screengrabs/aifkk-nested.png" alt="All in for Kansas Kids nested accordion">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="assets/screengrabs/aifkk-pathway.png" alt="All in for Kansas Kids career pathway">
-
-                                    </div>
+                                </div>
+                                <div class="content-wrapper">
+                                    <p>A great opportunity for collaboration with outside designers. Animation and responsiveness settings throughout the site provide an unexpectedly engaging experience for an infrastructure giant.</p>
+                                    <ul>
+                                        <li>Oversized typography and animations that work seamlessly across screensizes</li>
+                                        <li>Translation tool with custom formatting to account for longer words in certain langauges</li>
+                                        <li>Product catalog with custom ACF backend</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="six columns text-col">
-                            <p>Another instance where a little extra effort went a long way.</p>
-                            <ul>
-                                <li>Animated color-coded buttons and title accents</li>
-                                <li>Implemented custom tablist, two-column accordion, and nested accordion blocks</li>
-                                <li>Integrated Mailchimp pre-footer form</li>
-                                <li>Built image size and positioning helper functions in SCSS</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" id="dwela">
-                    <div class="row">
-                        <div class="six columns">
-                            <img class="logo" src="assets/logos/logo-dwela.png" alt="Dwela">
-                        </div>
-                    </div>
-                    <div class="row details">
-                        <div class="six columns text-col">
-                            <ul>
-                                <li>Implemented custom typewriter and countup JS functions to enable animated text on homepage</li>
-                                <li>Built custom stats block with ability to set unit and positioning of unit</li>
-                                <li>Built custom homepage modal form integrated with Google Maps API</li>
-                            </ul>
-                        </div>
-                        <div class="six columns img-col">
-                            <div class="swiper" id="dwelaCarousel">
-                                <div class="swiper-controls">
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-button-next"></div>
+                        <div class="project" id="americo">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <a class="project-link" href="https://www.americo.com">
+                                        <img class="logo" src="assets/logos/logo-americo.png" alt="Americo">
+                                    </a>
                                 </div>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/dwela-stats-thumb.png" controls muted>
-                                            <source src="assets/screengrabs/dwela-stats.webm" type="video/webm">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/dwela-vid-thumb.png" controls muted>
-                                            <source src="assets/screengrabs/dwela-vid.webm" type="video/webm">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
+                                <div class="screengrabs-wrapper">
+                                    <img class="u-max-full-width" loading="lazy" src="assets/screengrabs/americo-hp.png" alt="Americo homepage">
+                                </div>
+                                <div class="content-wrapper">
+                                    <p>Responsible for common ADA / accessibility issues and fixes — particularly for mega menus and forms. Working on Americo really helped me to cement my understanding of semantic HTML/CSS and simple ARIA and JS fixes.</p>
+                                    <p>Strong focus on accessibility, usability, responsiveness, and maintainability.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="project right" id="mlg">
-                    <div class="row">
-                        <div class="six offset-by-six columns">
-                            <img class="logo" src="assets/logos/logo-mlg.png" alt="Midwest Land Group">
+                        <div class="project" id="doctorDaughters">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <a class="project-link" href="https://doctordaughters.com/">
+                                        <img class="logo" src="assets/logos/logo-dd.png" alt="Doctor Daughters">
+                                    </a>
+                                </div>
+                                <div class="screengrabs-wrapper">
+                                    <img class="u-max-full-width" loading="lazy" src="assets/screengrabs/dd-slider.png" alt="Doctor Daughters slider">
+                                </div>
+                                <div class="content-wrapper">
+                                    <p>Working with mission-driven clients is always a treat and Doctor Daughters was great example. This client had a limited budget and great ideas, but what they needed most was a site that would easily grow with them. Some of the additional features I built out to help them included:</p>
+                                    <ul>
+                                        <li>CSS helper classes to manage content block widths and responsiveness
+                                        </li>
+                                        <li>Custom anchor fields for better page navigation</li>
+                                        <li>Custom slider that automatically generates a testimonials slider or a generic slider based on inputs</li>
+                                        <li>Custom angled gradient headers</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row details">
-                        <div class="six columns video-col">
-                            <video preload="none" width="100%" height="auto" poster="assets/screengrabs/mlg-vid-thumb.png" controls muted>
-                                <source src="assets/screengrabs/mlg-vid.webm" type="video/webm">
-                              Your browser does not support the video tag.
-                              </video>
+                        <div class="project" id="aifkk">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <a class="project-link" href="https://allinforkansaskids.org/">
+                                        <img class="logo" src="assets/logos/logo-aifkk.png" alt="All in for Kansas Kids">
+                                    </a>
+                                </div>
+                                <div class="screengrabs-wrapper">
+                                    <div class="swiper" id="aifkkCarousel">
+                                        <div class="swiper-controls">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img src="assets/screengrabs/aifkk-hp.png" alt="All in for Kansas Kids homepage">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="assets/screengrabs/aifkk-tablist.png" alt="All in for Kansas Kids tablist">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="assets/screengrabs/aifkk-nested.png" alt="All in for Kansas Kids nested accordion">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="assets/screengrabs/aifkk-pathway.png" alt="All in for Kansas Kids career pathway">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-wrapper">
+                                    <p>Another instance where a little extra effort went a long way.</p>
+                                    <ul>
+                                        <li>Animated color-coded buttons and title accents</li>
+                                        <li>Implemented custom tablist, two-column accordion, and nested accordion blocks</li>
+                                        <li>Integrated Mailchimp pre-footer form</li>
+                                        <li>Built image size and positioning helper functions in SCSS</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="six columns text-col">
-                            <h2>Midwest Land Group</h2>
-                            <p>Site refreshes present a unique challenge: how to evolve a website while taking advantage of what works?</p>
-                            <p>For MLG, we started with a new floating header and dynamic footer.</p>
-                            <ul>
-                                <li>Researched and implemented functionality to split menu on desktop screen sizes</li> 
-                                <li>Implemented dynamic footer text with built in defaults</li> 
-                                <li>Integrated fitText.jS to improve responsiveness</li>    
-                                <li>Built templated page in WordPress to power marketing campaign landing pages</li>    
-                            </ul>
+                        <div class="project" id="dwela">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <img class="logo" src="assets/logos/logo-dwela.png" alt="Dwela">
+                                </div>
+                                <div class="screengrabs-wrapper">
+                                    <div class="swiper" id="dwelaCarousel">
+                                        <div class="swiper-controls">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <video preload="none" width="100%" height="auto" poster="assets/screengrabs/dwela-stats-thumb.png" controls muted>
+                                                    <source src="assets/screengrabs/dwela-stats.webm" type="video/webm">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <video preload="none" width="100%" height="auto" poster="assets/screengrabs/dwela-vid-thumb.png" controls muted>
+                                                    <source src="assets/screengrabs/dwela-vid.webm" type="video/webm">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-wrapper">
+                                    <ul>
+                                        <li>Implemented custom typewriter and countup JS functions to enable animated text on homepage</li>
+                                        <li>Built custom stats block with ability to set unit and positioning of unit</li>
+                                        <li>Built custom homepage modal form integrated with Google Maps API</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project" id="mlg">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <img class="logo" src="assets/logos/logo-mlg.png" alt="Midwest Land Group">
+                                </div>
+                                <div class="screengrabs-wrapper">
+                                    <video preload="none" width="100%" height="auto" poster="assets/screengrabs/mlg-vid-thumb.png" controls muted>
+                                        <source src="assets/screengrabs/mlg-vid.webm" type="video/webm">
+                                      Your browser does not support the video tag.
+                                      </video>
+                                </div>
+                                <div class="content-wrapper">
+                                    <h2>Midwest Land Group</h2>
+                                    <p>Site refreshes present a unique challenge: how to evolve a website while taking advantage of what works?</p>
+                                    <p>For MLG, we started with a new floating header and dynamic footer.</p>
+                                    <ul>
+                                        <li>Researched and implemented functionality to split menu on desktop screen sizes</li>
+                                        <li>Implemented dynamic footer text with built in defaults</li>
+                                        <li>Integrated fitText.jS to improve responsiveness</li>
+                                        <li>Built templated page in WordPress to power marketing campaign landing pages</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -383,6 +372,9 @@
     <footer>
         <div class="container">
             <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="./versions.html">How It's Built</a>
+                </li>
                 <li class="navbar-item">
                     <a class="navbar-link" href="https://github.com/jdkhogan">Github</a>
                 </li>

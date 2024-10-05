@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Versions: The iterations of Jeremy Hogan's Portfolio Site">
+    <title>Versions</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/skeleton-legacy.css">
+    <link rel="stylesheet" href="assets/css/barebones.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://vjs.zencdn.net/8.6.1/video-js.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=RobotoMono&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-v1.css">
+    <style>.row + .row { margin-top: 4rem; }</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/index.html" class="navbar-brand">Jeremy Hogan</a>
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="./index.html#about" class="navbar-link">About</a>  
+                </li>
+                <li class="navbar-item">
+                    <a href="./index.html#projectDetails" class="navbar-link">Projects</a>  
+                </li>
+                <li class="navbar-item">
+                    <a href="https://www.linkedin.com/in/jeremydhogan" class="navbar-link">Contact</a>  
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <h4>Versions Dot HTML</h4>
+                        <h5p>A place to capture the experiments and versions of this site.</h5p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="version2-intro">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <h4>v2: Current</h4>
+                        <p>I wanted to improve responsiveness for the case study elements, and get more practice with <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" title="Check out my favorite reference at CSS Tricks" >CSS Grid</a> and container queries. Time to rework these case studies into responsive cards!</p>
+                        <p>By assigning the various card elements to<code>grid-areas,</code>I was able to gain more control over the elements across breakpoints.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <pre><code class="code">.project {
+    container-type: inline-size;
+    margin: 0 auto;
+    ...
+}</code></pre>
+                        <pre><code>.project-card {
+    ...
+    grid-template-areas: <span class="text-primary">"logo" "content" "screengrabs"</span>;
+    grid-template-columns: minmax(0, 1fr);
+
+    .logo-wrapper {
+        <span class="text-primary">grid-area: logo</span>;
+    }
+    ...
+}</code></pre>
+                    </div>
+                    <div class="six columns">
+                        <div class="demo-container-xs">
+                            <div class="project" id="prescotts">
+                                <div class="project-card">
+                                    <div class="logo-wrapper">
+                                        <a class="project-link" href="https://prescottsmed.com/">
+                                            <img class="logo" src="assets/logos/logo-prescotts.png" alt="Prescott's Med">
+                                        </a>
+                                    </div>
+                                    <div class="screengrabs-wrapper">
+                                        <div class="swiper" id="prescottsCarousel">
+                                            <div class="swiper-controls">
+                                                <div class="swiper-button-prev"></div>
+                                                <div class="swiper-button-next"></div>
+                                            </div>
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img class="u-max-full-width" widthloading="lazy" src="assets/screengrabs/prescotts-events.png" alt="Prescott's Event Feed">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <video preload="none" width="100%" height="auto" poster="assets/screengrabs/prescotts-vid-thumb.png" controls muted>
+                                                        <source src="assets/screengrabs/prescotts-vid.webm" type="video/webm">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-wrapper">
+                                        <p>A client in the medical supply field needed a new site for their group of brands, while also rolling out updates to individual brands, taking a templated approach. Several vital behind-the-scenes pieces of functionality, including:</p>
+                                        <ul>
+                                            <li>A Group Events feed that uses custom RSS and category tags to power event calendars on group site and on websites of multiple group brands
+                                            </li>
+                                            <li>Custom navigation to open brand tab in tablist, defaulting to a link to standalone brand website as a fallback for users without JavaScript enabled</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ten columns">
+                        <p>When our card container gets to an appropriate size, the card switches to a two-column layout. Using <code>minmax(0, 1fr)</code>overrides the default behavior that could allow card content like images or video to overflow the card. And the <code>.</code> placeholder is required in the <code>grid-template-areas</code>declaration to allow a grid cell to go unfilled.</p>
+                        <pre><code>@container (min-width: 640px) {
+    .project-card {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 6%;
+        grid-template-areas: ". logo" "screengrabs content";
+    }
+    ...
+}</code></pre>
+                        <p>Then alternating the images & content as we were before is as simple as changing the positioning of the grid areas and the slider controls:</p>
+                        <pre><code>.project:nth-child(even) {
+    @container (min-width: 640px) {
+        .project-card {
+            grid-template-areas: "logo ." "content screengrabs";
+        }
+        
+        .project-card .swiper .swiper-controls {
+            justify-content: flex-end;
+            margin-inline-end: 1.6rem;
+        }
+    }
+} </code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                        <div class="project" id="prescotts">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <a class="project-link" href="https://prescottsmed.com/">
+                                        <img class="logo" width="100%" height="auto" src="assets/logos/logo-prescotts.png" alt="Prescott's Med">
+                                    </a>
+                                </div>
+                                <div class="screengrabs-wrapper">
+                                    <div class="swiper" id="prescottsCarousel">
+                                        <div class="swiper-controls">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img class="u-max-full-width" width="100%" height="auto" loading="lazy" src="assets/screengrabs/prescotts-events.png" alt="Prescott's Event Feed">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <video preload="none" width="100%" height="auto" poster="assets/screengrabs/prescotts-vid-thumb.png" controls muted>
+                                                    <source src="assets/screengrabs/prescotts-vid.webm" type="video/webm">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-wrapper">
+                                    <p>A client in the medical supply field needed a new site for their group of brands, while also rolling out updates to individual brands, taking a templated approach. Several vital behind-the-scenes pieces of functionality, including:</p>
+                                    <ul>
+                                        <li>A Group Events feed that uses custom RSS and category tags to power event calendars on group site and on websites of multiple group brands
+                                        </li>
+                                        <li>Custom navigation to open brand tab in tablist, defaulting to a link to standalone brand website as a fallback for users without JavaScript enabled</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project" id="wireco">
+                            <div class="project-card">
+                                <div class="logo-wrapper">
+                                    <a class="project-link" href="https://www.wireco.com">
+                                        <img class="logo" width="100%" height="auto" src="assets/logos/logo-wireco.png" alt="WireCo">
+                                    </a>
+                                </div>
+                                <div class="screengrabs-wrapper">
+                                    <div class="swiper" id="wirecoCarousel">
+                                        <div class="swiper-controls">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <video preload="none" width="100%" height="auto" poster="assets/screengrabs/wireco-vid-thumb.png" controls muted>
+                                                    <source src="assets/screengrabs/wireco-hp.webm" type="video/webm">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="assets/screengrabs/wireco-made-frontend.png" alt="WireCo Made in USA front end">
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="assets/screengrabs/wireco-made-backend.png" alt="WireCo Made in USA back end">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-wrapper">
+                                    <p>A great opportunity for collaboration with outside designers. Animation and responsiveness settings throughout the site provide an unexpectedly engaging experience for an infrastructure giant.</p>
+                                    <ul>
+                                        <li>Oversized typography and animations that work seamlessly across screensizes</li>
+                                        <li>Translation tool with custom formatting to account for longer words in certain langauges</li>
+                                        <li>Product catalog with custom ACF backend</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="eight columns">
+                        <p>
+                            <a href="https://github.com/jdkhogan/portfolio">See my progress on GitHub</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="primary">
+        <section class="version1-intro">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <h4>v1</h4>
+                        <p>The first version of this site was powered by the Bootstrap library. It has some nice functionality built in, but was definitely more than this little project needed!</p>
+                        <p>Moving to a <a href="https://acahir.github.io/Barebones/" title="literally 'Barebones CSS'">barebones CSS framework</a> with minimal, targeted JS libraries for <a href="https://swiperjs.com/" title="Swiper.js">sliders</a> and <a href="https://videojs.com/" title="Video.js">videos</a> made a major difference in load times and maintainability.</p>
+                        <p>Case Studies swap image and content from left to right in a familiar pattern, using rows and columns more or less the same way that Bootstrap would.</p>
+                        <p>Next, I focused on some fun CSS styling and animations, starting with a frosted glass effect on the project cards. Later I implemented a scroll-out effect for the cards, using <span class="code">animation</span> and <span class="code">keyframes</span>.</p>
+                        <a href="https://github.com/jdkhogan/portfolio" class="">See my progress on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="v1" id="projectDetails">
+            <div class="container">
+                <div class="project right" id="prescotts">
+                    <div class="row">
+                        <div class="six offset-by-six columns">
+                            <a href="https://prescottsmed.com/">
+                                <img class="logo" src="assets/logos/logo-prescotts.png" alt="Prescott's Med">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row details">
+                        <div class="six columns img-col">
+                            <div class="swiper" id="prescottsCarousel">
+                                <div class="swiper-controls">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="u-max-full-width" widthloading="lazy" src="assets/screengrabs/prescotts-events.png" alt="Prescott's Event Feed">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/prescotts-vid-thumb.png" controls muted>
+                                            <source src="assets/screengrabs/prescotts-vid.webm" type="video/webm">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="six columns text-col">
+                            <p>A client in the medical supply field needed a new site for their group of brands, while also rolling out updates to individual brands, taking a templated approach. Several vital behind-the-scenes pieces of functionality, including:</p>
+                            <ul>
+                                <li>A Group Events feed that uses custom RSS and category tags to power event calendars on group site and on websites of multiple group brands
+                                </li>
+                                <li>Custom navigation to open brand tab in tablist, defaulting to a link to standalone brand website as a fallback for users without JavaScript enabled</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" id="wireco">
+                    <div class="row">
+                        <div class="six columns">
+                            <a href="https://www.wireco.com">
+                                <img class="logo" src="assets/logos/logo-wireco.png" alt="WireCo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row details">
+                        <div class="six columns text-col">
+                            <p>A great opportunity for collaboration with outside designers. Animation and responsiveness settings throughout the site provide an unexpectedly engaging experience for an infrastructure giant.</p>
+                            <ul>
+                                <li>Oversized typography and animations that work seamlessly across screensizes</li>
+                                <li>Translation tool with custom formatting to account for longer words in certain langauges</li>
+                                <li>Product catalog with custom ACF backend</li>
+                            </ul>
+                        </div>
+                        <div class="six columns img-col">
+                            <div class="swiper" id="wirecoCarousel">
+                                <div class="swiper-controls">
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <video preload="none" width="100%" height="auto" poster="assets/screengrabs/wireco-vid-thumb.png" controls muted>
+                                            <source src="assets/screengrabs/wireco-hp.webm" type="video/webm">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/screengrabs/wireco-made-frontend.png" alt="WireCo Made in USA front end">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="assets/screengrabs/wireco-made-backend.png" alt="WireCo Made in USA back end">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="./index.html">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="https://github.com/jdkhogan">Github</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="https://www.linkedin.com/in/jeremydhogan">LinkedIn</a>
+                </li>
+            </ul>
+            <a href="#" class="animated-arrow" alt="Back to Top">&#8679;</a>
+        </div>
+        <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </footer>
+</body>
+</html>

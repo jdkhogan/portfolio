@@ -2,7 +2,11 @@
 
 The goal is to use this portfolio site to not only showcase my experience, but to enhance the page with features and functionality over time.
 
-### v1.2.1
+### v2
+Simplified projects and moved to a CSS Grid card powered by container queries. 
+Added versions.html to share my progress.
+
+### v1.3
 Projects now include CSS scroll animations
 
 
@@ -14,5 +18,5 @@ Projects now feature CSS frosted glass effect
 Replaced Bootstrap with Barebones CSS framework for styling and Swiper.js for sliders
 
 
-### v1.0
+### v1
 HTML/CSS with Bootstrap, Google Fonts, and Video.js
