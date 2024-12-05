@@ -30,6 +30,13 @@
     }
 }
 
+   
+@keyframes reveal {
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -239,6 +246,11 @@ footer .container {
 
 
 /* About */
+#about {
+    clip-path: inset(0 100% 0 0);
+    animation: reveal 500ms forwards cubic-bezier(0.77, 0, 0.175, 1);
+}
+
 .lead {
     font-size: 2rem;
 }
