@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /assets/logos
+Disallow: /assets/screengrabs
+Sitemap: https://hogan.work/sitemap.xml
