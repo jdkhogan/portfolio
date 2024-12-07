@@ -3,7 +3,7 @@
     --std-spacing: 3.2rem;
     
     /* Barebones overrides */
-    --theme-hue: #f0f0f0;
+    --theme-hue: #fdfcfa;
     --accent-hue: 247;
     --background-color: var(--theme-hue);
     --accent-color: hsl(var(--accent-hue), 100%, 59%);				
