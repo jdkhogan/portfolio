@@ -72,7 +72,7 @@ section + section {
 
 @media (max-width: 900px) {
     .row {
-        gap: 0.8rem;
+        gap: calc(0.25 * var(--std-spacing));
     }
 }
 
@@ -186,6 +186,36 @@ video {
     background-color: #000e;
 }
 
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: calc(0.5 * var(--std-spacing));
+}
+
+.mb-2 {
+    margin-bottom: calc(1 * var(--std-spacing));
+}
+
+.mb-3 {
+    margin-bottom: calc(1.5 * var(--std-spacing));
+}
+
+/* General */
+.hp-title, .projects-title {
+    clip-path: inset(0 100% 0 0);
+    animation: reveal 500ms forwards cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#intro .text-wrapper, #intro .button, 
+.versions .intro {
+    clip-path: inset(0 100% 0 0);
+    animation: reveal 750ms forwards cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+
+
 /* Nav */
 @media (max-width: 900px) {
     .navbar {
@@ -245,20 +275,15 @@ footer .container {
 }
 
 
-/* About */
-#about {
-    clip-path: inset(0 100% 0 0);
-    animation: reveal 500ms forwards cubic-bezier(0.77, 0, 0.175, 1);
-}
-
+/* Intro & About */
 .lead {
     font-size: 2rem;
 }
 
 .text-wrapper {
-    margin-bottom: 2.4rem;
+    margin-bottom: calc(var(--std-spacing) * 2 / 3);
     @media (min-width: 900px) {
-        margin-bottom: 4.8rem;
+        margin-bottom: calc(1.5 * var(--std-spacing));
     }
 }
 
@@ -299,13 +324,13 @@ footer .container {
     container-type: inline-size;
     margin: 0 auto;
     padding: 2rem;
-    border-radius: 4px;
-    box-shadow: 0px 6px 6px 6px #e0e0e0;
+    /* border-radius: 4px;
+    box-shadow: 0px 6px 6px 6px #e0e0e0; */
 }
 
 
 .project + .project {
-    margin-top: calc(1 * var(--std-spacing));
+    margin-top: calc(1.5 * var(--std-spacing));
 }
 
 @media (min-width: 900px) {
@@ -313,7 +338,7 @@ footer .container {
         padding: 3%;
     }
     .project + .project {
-        margin-top: calc(2 * var(--std-spacing));
+        margin-top: calc(4 * var(--std-spacing));
     }
 
     @supports (animation-timeline: view()) {
@@ -379,10 +404,10 @@ footer .container {
         display: flex;
         justify-content: flex-start;
         order: 2;
-        margin-top: 1.5rem;
+        margin-top: calc(0.5 * var(--std-spacing));
         margin-inline-start: -10px;
-        gap: 40px;
-        min-height: 30px;
+        gap: calc(1.25 * var(--std-spacing));
+        min-height: var(--std-spacing);
     }
 
     .swiper-button-prev,
@@ -412,11 +437,10 @@ footer .container {
     
     .project-card .swiper {
         display: block;
-        margin-top: -3rem;
+        margin-top: calc(-1 * var(--std-spacing));
 
         .swiper-controls {
             margin-top: 0;
-            /* margin-inline-start: 10px; */
         }
     }
 }

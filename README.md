@@ -2,6 +2,9 @@
 
 The goal is to use this portfolio site to not only showcase my experience, but to enhance the page with features and functionality over time.
 
+### v2.2
+Rewrote much of the intro content to focus more on my work and goals. Re-styled project cards.
+
 ### v2.1 
 Finally moved onto my own domain at [hogan.work](https://www.hogan.work), currently powered by Cloudflare Pages! Given that I'm not using any build tools, deployment is virtually identical and take no time at all.
 
