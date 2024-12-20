@@ -323,20 +323,24 @@ footer .container {
 .project {
     container-type: inline-size;
     margin: 0 auto;
-    padding: 2rem;
+    padding-block: 2rem;
     /* border-radius: 4px;
     box-shadow: 0px 6px 6px 6px #e0e0e0; */
 }
 
+img:not(.logo), video {
+    box-shadow: 0 0 1px #5555;
+}
+
+.swiper-slide img {
+    box-shadow: none;
+}
 
 .project + .project {
     margin-top: calc(1.5 * var(--std-spacing));
 }
 
 @media (min-width: 900px) {
-    .project {
-        padding: 3%;
-    }
     .project + .project {
         margin-top: calc(4 * var(--std-spacing));
     }
