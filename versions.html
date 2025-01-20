@@ -6,6 +6,7 @@
     <meta name="description" content="Versions: The iterations of Jeremy Hogan's Portfolio Site">
     <link rel="canonical" href="https://www.hogan.work/versions" />
     <title>Versions</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/skeleton-legacy.css">
     <link rel="stylesheet" href="assets/css/barebones.css">
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="style-v1.css">
     <style>.row + .row { margin-top: 4rem; }</style>
 </head>
-<body>
+<body class="versions">
     <nav class="navbar">
         <div class="container">
             <a href="https://www.hogan.work/" class="navbar-brand">Jeremy Hogan</a>
@@ -37,8 +38,9 @@
                 </li>
             </ul>
         </div>
+        <hr class="scroll-progress">
     </nav>
-    <main class="versions">
+    <main>
         <section class="intro">
             <div class="container">
                 <div class="row">
@@ -53,7 +55,42 @@
             <div class="container">
                 <div class="row">
                     <div class="eight columns">
-                        <h4 class="text-brand">v2.2: Current</h4>
+                        <h4 class="text-brand">v2.3: Current</h4>
+                        <p>Added detail on ongoing updates to AIFKK and Prescott's.</p>
+                        <p>Styling for mobile view of code snippets on Versions page.</p>
+                        <p>Built progress bar for mobile view, using<code>animation-timeline: scroll()</code></p>
+                        <p>The use of scroll-driven animations is still restricted to Chromium-based browsers at this time, so this is a nice feature that will only show up for some site visitors for the time being. I snagged this code from a larger exploration of scroll timelines by Lee Meyer on <a href="https://css-tricks.com/slide-through-unlimited-dimensions-with-css-scroll-timelines/">CSS-Tricks</a>, and it builds on an earlier <a href="https://codepen.io/chriscoyier/pen/NWxpJVx">keyframe scroll animation demo</a> by Chris Coyier.</p>
+                        <p>It starts with an<code>hr</code>divider in the nav. The scroll() CSS function accounts for the position on the page, in the vertical axis by default. As outlined in MDN, <em>"The position in the scroll range is converted into a percentage of progress — 0% at the start and 100% at the end."</em></p>
+                        <p>Then it's as simple as connecting an animation that goes from 0 to 100% with an animation timeline that pulls in the the scroll position from 0 to 100!</p>
+                        <pre><code class="code">@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+        .scroll-progress {
+            display: block;
+            margin: 0;
+            height: 3px;
+            width: 0%;
+            background-color: var(--accent-color);
+            animation: scroll-progress 1s linear;
+            animation-timeline: scroll();
+        }
+    }
+}
+
+@keyframes scroll-progress {
+    to {
+        background-color: var(--accent-color);
+        width: 100%;
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <h4 class="text-brand">v2.2</h4>
                         <p>Rewrote much of the Intro to focus more on my work and goals. Moved the About section to the end of the homepage. Re-styled project cards.</p>
                     </div>
                 </div>
@@ -84,8 +121,9 @@
     container-type: inline-size;
     margin: 0 auto;
     ...
-}</code></pre>
-                        <pre><code>.project-card {
+}
+
+.project-card {
     ...
     grid-template-areas: <span class="text-primary">"logo" "content" "screengrabs"</span>;
     grid-template-columns: minmax(0, 1fr);
@@ -139,7 +177,7 @@
                 </div>
                 <div class="row">
                     <div class="ten columns">
-                        <p>When our card container gets to an appropriate size, the card switches to a two-column layout. Using <code>minmax(0, 1fr)</code>overrides the default behavior that could allow card content like images or video to overflow the card. And the <code>.</code> placeholder is required in the <code>grid-template-areas</code>declaration to allow a grid cell to go unfilled.</p>
+                        <p>When our card container gets to an appropriate size, the card switches to a two-column layout. Using<code>minmax(0, 1fr)</code>overrides the default behavior that could allow card content like images or video to overflow the card. And the <code>.</code> placeholder is required in the <code>grid-template-areas</code>declaration to allow a grid cell to go unfilled.</p>
                         <pre><code>@container (min-width: 640px) {
     .project-card {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
