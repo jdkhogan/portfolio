@@ -55,6 +55,81 @@
             <div class="container">
                 <div class="row">
                     <div class="eight columns">
+                        <h4 class="text-brand">Feb 5, 2025</h4>
+                        <p><strong>Not a site update but a code snippet instead.</strong></p>
+                        <p>I'm sure we've all seen sites using a typewriter effect by this point. I've built a few versions of them for client projects, generally using JS libraries or custom JS. After seeing <a href="https://codepen.io/kevinpowell/pen/ExWZzmm">another version</a> from the excellent <a href="https://www.youtube.com/watch?v=w1nhwUGsG6M">Kevin Powell</a>, I figured it was time to take a crack at building a lightweight version for myself.</p>
+                        <p>In the end I wound up combining his approach with the effect from another <a href="https://codepen.io/kensparby/pen/YzpOVbJ">Codepen</a>. The below code is designed to connect to an ACF block in WordPress. The demo that follows uses <code>infinite</code> in the animation purely for demonstration purposes. In the wild, this would use <code>forwards</code> instead.</p>
+                        <p>CSS can now handle everything – including the calculations necessary to make this feel lifelike! The key elements are:</p>
+                        <ol>
+                            <li><code>overflow: hidden</code> to keep text out of view until needed.</li>
+                            <li>The <code>steps()</code> animation timing function to reveal one letter at a time.</li>
+                            <li>And finally, the <code>ch</code> unit in combination with a monospaced font. In monospace (fixed-width) fonts, where all characters are the same width, 1ch equals one character.</li>
+                        </ol>
+                        <pre><code class="code">&lt;?php 
+    $typewriter_content = get_field('typewriter_content'); 
+    $typewriter_length = count($typewriter_content);
+    $typewriter_speed = get_field('typewriter_speed') ?: 3; 
+?&gt;
+
+.typewriter {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.typewriter-inner { 
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-inline: 0;
+    width: max-content;
+    animation: typing &lt;?php echo $typewriter_speed. 's';?&gt; steps(&lt;?php echo $typewriter_length; ?&gt;) forwards; 
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: &lt;?php echo $typewriter_length . 'ch'; ?&gt; }
+}
+                            
+&lt;section id=&quot;&lt;?php echo esc_attr($block['id']); ?&gt;&quot; class=&quot;typewriter&quot;&gt;
+    &lt;h2 class=&quot;typewriter-inner&quot;&gt;&lt;?php echo $typewriter_content; ?&gt;&lt;/h2&gt;
+&lt;/section&gt;</code></pre>
+                    <h5 class="">Demo</h5>
+                        <style>
+                            .typewriter {
+                                display: flex;
+                                justify-content: center;
+                                text-align: center;
+                                margin-inline: 0;
+                            }
+                            .typewriter-inner { 
+                                font-family: 'Courier New', Courier, monospace;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                margin-inline: 0;
+                                width: max-content;
+                                animation: typing 5s steps(40) infinite; 
+                            }
+                            @keyframes typing {
+                                from { width: 0 }
+                                60%, 100% { width: 40ch }
+
+                            }
+                        </style>
+                        
+                        <div class="typewriter mb-3">
+                            <p class="typewriter-inner">This text content is 40 characters long.</p>
+                        </div>
+                        <p><strong>Next steps:</strong> While I like the way this is running, I'd like to put in some work to make the CSS responsive, which would entail wrapping text onto multiple lines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
                         <h4 class="text-brand">v2.3: Current</h4>
                         <p>Added detail on ongoing updates to AIFKK and Prescott's.</p>
                         <p>Styling for mobile view of code snippets on Versions page.</p>
