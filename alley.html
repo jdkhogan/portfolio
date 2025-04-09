@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Code Samples for Alley">
+    <link rel="canonical" href="https://www.hogan.work/alley" />
+    <title>Versions</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/skeleton-legacy.css">
+    <link rel="stylesheet" href="assets/css/barebones.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=RobotoMono&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-v1.css">
+    <style>.row + .row { margin-top: 4rem; }</style>
+</head>
+<body class="versions">
+    <nav class="navbar">
+        <div class="container">
+            <a href="https://www.hogan.work/" class="navbar-brand">Jeremy Hogan</a>
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="https://www.hogan.work/#about" class="navbar-link">About</a>  
+                </li>
+                <li class="navbar-item">
+                    <a href="https://www.hogan.work/#projectDetails" class="navbar-link">Projects</a>  
+                </li>
+                <li class="navbar-item">
+                    <a href="https://www.linkedin.com/in/jeremydhogan" class="navbar-link">Contact</a>  
+                </li>
+            </ul>
+        </div>
+        <hr class="scroll-progress">
+    </nav>
+    <main>
+        <section class="intro" id="ex1">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <h4>Code Samples</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <h4 class="text-brand">Cache-breaking JS-powered Events Feed</h4>
+                        <p>A client consisting of several brands unified under one group umbrella requested a rework of their events feed in order to set up a centralized events database that all brands could pull from. They wanted the ability to add an event to the group website, tag it with a brand names, and have it automatically populate through to the relevant individual sites. They needed a solution that would not conflict with their caching plugins and website host caching rules, so it couldn't be pure PHP.</p>
+                        <p>Three challenges:</p>
+                        <ol>
+                            <li>Build an events feed hosted on a group website that can feed the events calendar on each individual brand site</li>
+                            <li>Build it in a way that works around caching</li>
+                            <li>Build it on top of the pre-existing events feed in a way that doens't force client team to relearn how to work with events.</li>
+                        </ol>
+                        <p>On the group site, we start with a fairly standard WP Query to pull in upcoming events, with one key addition: the event-brand taxonomy, which is used to delineate the individual brands for the feed.</p>
+                        <p class="mb-3">Setting the <code>Access-Control-Allow-Origin</code> header solves for CORS-related issues and allows us to serve the feed to the individual sites.</p>
+                        <h6>feed-rss2-events.php</h6>
+                        <pre><code class="code mb-3">
+/**
+    * RSS2 Feed Template for displaying RSS2 Posts feed.
+    *
+    * @package WordPress
+*/
+
+$posts = query_posts( array(
+    'post_type' => 'events',
+    'posts_per_page' => -1,
+    'meta_query' => array(
+        'relation' => 'AND',
+        array(
+            'key'       => 'event_exclude',
+            'value'     => true,
+            'compare'   => '!=',
+        ),
+        array(
+            'key'     => 'event_start_date',
+            'value'   => date( 'Ymd' ),
+            'compare' => '>',
+            'type'    => 'date'
+        ),
+    ),
+    'orderby' => 'event_start_date',
+    'order' => 'ASC',
+    'tax_query' => array( 
+        array (
+            'taxonomy' => 'event-brand',
+            'field' => 'slug',
+            'terms' => $_GET['brand'],
+            'operator'=> 'IN'
+        )
+    ),
+));
+header( 'Access-Control-Allow-Origin: *' );
+header( 'Content-Type: ' . feed_content_type( 'rss2' ) . '; charset=' . get_option( 'blog_charset' ), true );
+
+...</code></pre>
+
+                    <p >After setting up the feed, we run a loop to build the feed items from our pre-existing events feed, which is a custom post type powered by ACF.</p>
+                    <p>Rather than passing an image in the RSS feed, I opted to use a the RSS enclosure to pass through the URL for a specific image size.</p>
+<pre><code class="code mb-3">... 
+
+Generic code to set up RSS feed
+
+...
+
+do_action( 'rss2_head' );
+
+while ( have_posts() ) : the_post(); 
+    $event_image = get_field('event_image');
+    $event_link = get_field('event_link');
+    $event_start_date = get_field('event_start_date');
+    $event_end_date = get_field('event_end_date');	
+
+    $thumbnail_size = apply_filters( 'rss_enclosure_image_size', 'large' );
+    $thumbnail_id = $event_image['id'];
+    $thumbnail = image_get_intermediate_size( $thumbnail_id, $thumbnail_size );
+
+    if ( empty( $thumbnail ) )
+        return;
+
+    $upload_dir = wp_upload_dir();
+    
+    ?&gt;
+    
+    &lt;item&gt;
+        
+        ... 
+
+        &lt;link&gt;&lt;?php the_permalink_rss(); ?&gt;&lt;/link&gt;
+        &lt;?php printf( '&lt;enclosure url="%s" length="%s" type="%s" /&gt;',
+            $thumbnail['url'], 
+            filesize( path_join( $upload_dir['basedir'], $thumbnail['path'] ) ), 
+            get_post_mime_type( $thumbnail_id ) 
+        ); ?&gt;
+
+        ...
+
+    &lt;/item&gt;
+&lt;?php endwhile; ?&gt;</code></pre>
+                    <p>On the brand websites, the existing events slider used Glide.js and pulled in events manually entered and selected by the client. I preserved that workflow and added the option to enter an RSS Feed, by simply adding a parameter to the URL of the feed page on the group site.</p>
+                    <p>Then it's simply a matter of using DOMParser to pull in the feed and generate the slides and bullets that we need!</p>
+                    <h6>events-rss.js</h6>
+                    <pre><code class="code mb-3">const eventsSlider = document.querySelector('.events-glide');
+function mountEventSlider(selector) {
+    const eventsGlide = new Glide(selector, {
+        type: 'carousel', 
+        startAt: 0,
+        perView: 1
+    }); 
+    eventsGlide.mount();
+}
+if(eventsSlider) {
+    const eventSlidesContainer = document.querySelector('.event-slides-container');
+    const eventBulletsContainer = document.querySelector('.events-glide .glide__bullets');
+    const RSS_URL = eventSlidesContainer.dataset.feedUrl;
+    if (RSS_URL) {
+        fetch(RSS_URL)
+            .then(res => res.text())
+            .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+            .then(data => {
+                const items = data.querySelectorAll('item');
+                let eventSlides = "";
+                let eventBullets = "";
+                if (items.length) {
+                    items.forEach((el, index) => {
+                        const title = el.querySelector('title').textContent;
+                        const link = el.querySelector('link').textContent;
+                        const img = el.querySelector('enclosure').getAttribute('url');
+                        eventSlides += `&lt;a href="${link}"&gt;&lt;div class="single-image-slide glide__slide"&gt;&lt;div class="slider-image-wrap"&gt;&lt;div class="slider-image"&gt;&lt;img src="${img}" class="w-100 h-auto" title="${title}"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;\n`;
+                        eventSlides += `&lt;a href="${link}"&gt;&lt;div class="single-image-slide glide__slide"&gt;&lt;div class="slider-image-wrap"&gt;&lt;div class="slider-image"&gt;&lt;img src="${img}" class="w-100 h-auto" alt="${title}"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt;\n`;
+                        eventBullets += `&lt;button class="glide__bullet ${index == 0 ? 'glide__bullet--active' : ''}" data-glide-dir="=${index}"&gt;&lt;/button&gt;`;
+                    });
+                } else {
+                    eventSlides += '&lt;p class="fw-bold"&gt;No events found.&lt;/p&gt;';
+                }
+                eventSlidesContainer.insertAdjacentHTML("beforeend", eventSlides);
+                eventBulletsContainer.insertAdjacentHTML("beforeend", eventBullets);
+            })
+            .then(() => mountEventSlider('.events-glide'));
+    } else {
+        mountEventSlider('.events-glide'); // generates the manually created events slider previously in use.
+    }
+}</code></pre>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="https://www.hogan.work/">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="https://github.com/jdkhogan">Github</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="https://www.linkedin.com/in/jeremydhogan">LinkedIn</a>
+                </li>
+            </ul>
+            <a href="#" class="animated-arrow" alt="Back to Top">&#8679;</a>
+        </div>
+        <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </footer>
+</body>
+</html>

@@ -2,6 +2,9 @@
 
 The goal is to use this portfolio site to not only showcase my experience, but to enhance the page with features and functionality over time.
 
+### v2.3
+Added projects, improved styling of code snippets on mobile, and added progress bar on mobile using <code>animation-timeline: scroll()</code>
+
 ### v2.2
 Rewrote much of the intro content to focus more on my work and goals. Re-styled project cards.
 
