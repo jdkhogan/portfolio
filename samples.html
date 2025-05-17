@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Code Samples for Alley">
-    <link rel="canonical" href="https://www.hogan.work/alley" />
+    <meta name="description" content="Code Samples">
+    <link rel="canonical" href="https://www.hogan.work/samples" />
     <title>Code Samples</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="assets/css/normalize.css">
@@ -39,7 +39,7 @@
         <hr class="scroll-progress">
     </nav>
     <main>
-        <section class="intro" id="ex1">
+        <section class="intro">
             <div class="container">
                 <div class="row">
                     <div class="eight columns">
@@ -48,12 +48,31 @@
                 </div>
             </div>
         </section>
-        <section class="intro">
+        <section class="intro" id="ex1">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <h4 class="text-brand">Fully custom WooCommerce site with product designer</h4>
+                        <p>Automated workflow from order, to pre-press review, to shipping, and order status notifications along the way – using WooCommerce hooks and Zapier to connect WooCommerce statuses and emails for client and admin, the API for the product designer plugin (Zakeke), and their shipping solution, PirateShip.</p>
+                        <div class="samples-img-wrapper"><img src="assets/screengrabs/r2r-dash.png" width="100%" height="auto" alt="R2R WooCommerce Dashboard"></div>
+                        <div class="samples-img-wrapper"><img src="assets/screengrabs/r2r-status.jpg" width="100%" height="auto" alt="R2R Order Status page"></div>
+                        <p class="mb-0">Code included in excerpt of functions.php at <a href="https://github.com/jdkhogan/portfolio/blob/9911169ed45ebb01ee1d7f962fdd9efb6fe957a6/assets/samples/r2r-functions.php">Github</a>.</p>
+                        <p><code class="code">(portfolio/assets/samples/r2r-functions.php)</code></p>
+                        <ul>
+                            <li>Custom WooCommerce statuses (lines 83 - 196) and admin statuses (lines 310 - 403)</li>
+                            <li>Item previews in Dashboard (lines 405 - 443)</li>
+                            <li>Order Status page pulling in data from WooCommerce, Zakeke, Pirate Ship, and Stripe (lines 471 - end)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="intro" id="ex2">
             <div class="container">
                 <div class="row">
                     <div class="eight columns">
                         <h4 class="text-brand">Cache-breaking JS-powered Events Feed</h4>
-                        <p>A client consisting of several brands unified under one group umbrella requested a rework of their events feed in order to set up a centralized events database that all brands could pull from. They wanted the ability to add an event to the group website, tag it with a brand names, and have it automatically populate through to the relevant individual sites. They needed a solution that would not conflict with their caching plugins and website host caching rules, so it couldn't be pure PHP.</p>
+                        <p>A client consisting of several brands unified under one group umbrella requested a rework of their events feed in order to set up a centralized events database that all brands could pull from. They wanted the ability to add an event to the group website, tag it with a brand names, and have it automatically populate through to the relevant individual sites. They needed a solution that would not conflict with their caching plugins and website host caching rules, so it couldn't be pure PHP. See it live on the <a href="https://prescottsmed.com/">group site</a> and on an <a href="https://surgicalmicroscopes.com/">individual brand site</a>.</p>
                         <p>Three challenges:</p>
                         <ol>
                             <li>Build an events feed hosted on a group website that can feed the events calendar on each individual brand site</li>
@@ -190,6 +209,27 @@ if(eventsSlider) {
     }
 }</code></pre>
 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="intro" id="ex3">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <h4 class="text-brand">Responsive Media Cluster block built with ACF and CSS Grid</h4>
+                        <p>ACF block designed with ease of use in mind. For each location of the cluster, client can select background image or preset animated icon. Then simply add and image and optional text, and the cluster will be generated for them. <a href="https://discoveryparkls.com/the-village/">See it live</a>.</p>
+                        <div class="samples-img-wrapper"><img src="assets/screengrabs/disco-desktop.png" width="100%" height="auto" alt="Discovery Park Media Cluster - Desktop"></div>
+                        <div class="samples-img-wrapper"><img src="assets/screengrabs/disco-mobile.png" alt="Discovery Park Media Cluster - Mobile"></div>
+                        <p class="mb-0"><a href="https://github.com/jdkhogan/portfolio/blob/189f03017fd948604783d1ffea4fc70decaca786/assets/samples/disco-interior-card-cluster.php">ACF Block</a></p>
+                        <p><code class="code">(portfolio/assets/samples/disco-interior-card-cluster.php)</code></p>
+
+                        <p class="mb-0"><a href="https://github.com/jdkhogan/portfolio/blob/189f03017fd948604783d1ffea4fc70decaca786/assets/samples/disco-card-cluster.scss">SASS file - grid, animations, etc.</a></p>
+                        <p><code class="code">(portfolio/assets/samples/disco-card-cluster.scss)</code></p>
+                        <ul>
+                            <li>Grid Setup (lines 234 - end)</li>
+                            <li>Wave animation (lines 170 - 186)</li>
+                        </ul>
                     </div>
                 </div>
             </div>

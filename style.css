@@ -497,6 +497,10 @@ img:not(.logo), video {
     }
 } 
 
+.samples-img-wrapper {
+    margin-bottom: 2rem;
+}
+
 /* Footer */
 footer {
     padding-top: var(--std-spacing);
