@@ -77,7 +77,7 @@
                         <ol>
                             <li>Build an events feed hosted on a group website that can feed the events calendar on each individual brand site</li>
                             <li>Build it in a way that works around caching</li>
-                            <li>Build it on top of the pre-existing events feed in a way that doens't force client team to relearn how to work with events.</li>
+                            <li>Build it on top of the pre-existing events feed so that the client team does not need to relearn how to work with events.</li>
                         </ol>
                         <p>On the group site, we start with a fairly standard WP Query to pull in upcoming events, with one key addition: the event-brand taxonomy, which is used to delineate the individual brands for the feed.</p>
                         <p class="mb-3">Setting the <code>Access-Control-Allow-Origin</code> header solves for CORS-related issues and allows us to serve the feed to the individual sites.</p>
@@ -164,7 +164,7 @@ while ( have_posts() ) : the_post();
 
     &lt;/item&gt;
 &lt;?php endwhile; ?&gt;</code></pre>
-                    <p>On the brand websites, the existing events slider used Glide.js and pulled in events manually entered and selected by the client. I preserved that workflow and added the option to enter an RSS Feed, by simply adding a parameter to the URL of the feed page on the group site.</p>
+                    <p>On the brand websites, the existing events slider used Glide.js and pulled in events manually entered and selected by the client. I preserved that workflow and built in the option to enter an RSS Feed, by adding a parameter to the URL of the feed page on the group site.</p>
                     <p>Then it's simply a matter of using DOMParser to pull in the feed and generate the slides and bullets that we need!</p>
                     <h6>events-rss.js</h6>
                     <pre><code class="code mb-3">const eventsSlider = document.querySelector('.events-glide');
@@ -218,7 +218,7 @@ if(eventsSlider) {
                 <div class="row">
                     <div class="eight columns">
                         <h4 class="text-brand">Responsive Media Cluster block built with ACF and CSS Grid</h4>
-                        <p>ACF block designed with ease of use in mind. For each location of the cluster, client can select background image or preset animated icon. Then simply add and image and optional text, and the cluster will be generated for them. <a href="https://discoveryparkls.com/the-village/">See it live</a>.</p>
+                        <p>ACF block designed with ease of use in mind. For each location of the cluster, client can select background image or preset animated icon. Then simply add an image and optional text, and the cluster will be generated for them. <a href="https://discoveryparkls.com/the-village/">See it live</a>.</p>
                         <div class="samples-img-wrapper"><img src="assets/screengrabs/disco-desktop.png" width="100%" height="auto" alt="Discovery Park Media Cluster - Desktop"></div>
                         <div class="samples-img-wrapper"><img src="assets/screengrabs/disco-mobile.png" alt="Discovery Park Media Cluster - Mobile"></div>
                         <p class="mb-0"><a href="https://github.com/jdkhogan/portfolio/blob/189f03017fd948604783d1ffea4fc70decaca786/assets/samples/disco-interior-card-cluster.php">ACF Block</a></p>
