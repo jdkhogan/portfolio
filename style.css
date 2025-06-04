@@ -327,6 +327,13 @@ footer .container {
     }
 }
 
+.home .button.centered {
+    @media (max-width: 900px) {
+        display: flex;
+        justify-self: center;
+    }
+}
+
 
 /* Project Intros */
 /* .card .card-header,
