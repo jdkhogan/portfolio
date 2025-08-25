@@ -13,6 +13,24 @@
     --swiper-navigation-color: var(--accent-color);
 }
 
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
+}
+
 @keyframes scroll-progress {
     to {
         background-color: var(--accent-color);
@@ -82,12 +100,12 @@ section + section {
     }
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, ul {
+h1, h2, h3, h4, h5, h6, p, ul, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: calc(0.5 * var(--std-spacing));
     color: var(--text-color-normal);
 }
 
-.h1, .h2, h1, h2 {
+h1, h2, .h1, .h2  {
     font-family: 'Josefin Sans', sans-serif;
     text-wrap: balance;
 }
@@ -96,7 +114,7 @@ h1 {
     font-size: clamp(2.4rem, 0.8rem + 4.267vw, 4rem);
 }
 
-.h3, .h4, .h5, .h6, h3, h4, h5, h6, a, p, ul, ol {
+h3, h4, h5, h6, a, p, ul, ol, .h3, .h4, .h5, .h6 {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
 }

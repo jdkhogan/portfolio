@@ -1,0 +1,132 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="home">
+			<section id="intro">
+				<div class="container">
+					<div class="row">
+						<div class="eight columns">
+							<h1 class="hp-title mb-2"><span class="text-brand">Full Stack Developer</span> with a deep marketing background</h1>
+							<div class="text-wrapper">
+								<h6>I build easy-to-maintain sites with WordPress.</h6>
+								<h6>I write custom-made apps & tools with HTML/CSS, JavaScript, React, PHP, and Web Components.</h6>
+								<h6 class="mb-2">I also write about what I'm learning as I continue to build this site. <a href="/versions.html">Check it out</a>.</h6>
+								<p class="centered tw-pretty"><strong class="text-brand">Available for</strong>: Full-time engagements, freelance projects, website maintenance contracts.</p>
+								<p class="centered tw-pretty"><strong class="text-brand">Most Recently</strong>: Web Developer at <a href="https://voltage.digital">Voltage</a>, a digital agency.</p>
+								<p class="centered tw-pretty"><strong>Currently using</strong>: WordPress&nbsp;• Woocommerce&nbsp;• PHP&nbsp;• JS&nbsp;• React&nbsp;• MySQL&nbsp;• REST&nbsp;• Bootstrap&nbsp;• SASS</p>
+								<p class="centered tw-pretty"><strong>Currently learning</strong>: Web Components&nbsp;• Laravel&nbsp;• Preact&nbsp;• Astro </p>
+								<p class="centered tw-pretty"><strong>Experience with</strong>: Kadence&nbsp;• Divi&nbsp;• Elementor&nbsp;• WPBakery&nbsp;• GraphQL&nbsp;• TypeScript&nbsp;• Python&nbsp;• Java&nbsp;• Tailwind&nbsp;• Google Ads & Analytics</p>
+							</div>
+
+							<a class="button button-primary centered" href="https://www.linkedin.com/in/jeremydhogan">Contact Me</a>
+						</div>
+						<div class="four columns" hidden>
+							<!-- <div class="placeholder portrait w-100"></div> -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- TODO: Convert Project to component -->
+			<section id="projectDetails">
+				<div class="container">
+					<div class="row">
+						<div class="twelve columns">
+							<h2 class="projects-title">Projects</h2>
+							<div class="project" id="mna">
+								<div class="project-card">
+									<div class="logo-wrapper">
+										<a href="https://mtnonprofit.org" class="project-link"><img class="logo" src="assets/logos/logo-mna.png" alt="Montana Nonprofit Association"></a>
+									</div>
+									<div class="screengrabs-wrapper">
+										<div class="swiper" id="mnaCarousel">
+											<div class="swiper-controls">
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
+											<div class="swiper-wrapper">
+												<div class="swiper-slide">
+													<img src="assets/screengrabs/mna-homepage.png" alt="MNA Homepage">
+												</div>
+												<div class="swiper-slide">
+													<video preload="none" width="100%" height="auto" poster="assets/screengrabs/mna-vid-thumb.png" controls muted>
+														<source src="assets/screengrabs/mna-hp.mp4" type="video/mp4">
+														Your browser does not support the video tag.
+													</video>
+												</div>
+												<div class="swiper-slide">
+													<img src="assets/screengrabs/mna-event.png" alt="MNA Event - Dynamic sidebars">
+												</div>
+												<div class="swiper-slide">
+													<video preload="none" width="100%" height="auto" poster="assets/screengrabs/mna-circles-thumb.png" controls muted>
+														<source src="assets/screengrabs/mna-learning-circles.mp4" type="video/mp4">
+														Your browser does not support the video tag.
+													</video>
+												</div>
+												<div class="swiper-slide">
+													<img src="assets/screengrabs/mna-learning-1.png" alt="MNA Learning - Event displays 1">
+												</div>
+												<div class="swiper-slide">
+													<img src="assets/screengrabs/mna-learning-2.png" alt="MNA Learning - Event displays 2">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="content-wrapper">
+										<h6>Full site build: development and project management</h6>
+										<ul>
+											<li>Dynamic, lightweight site built to showcase content to members with a wide variety of engaging blocks and empower staff with a user-friendly CMS.</li>
+											<li>Automated migration of hundreds of resources and events into new Resource Library</li>
+											<li>Extensive admin control of metadata for resources and events across all areas of the site</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+			<p>
+				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
+				template serves as a lightweight, minimally-styled starting point for anyone looking to build
+				a personal website, blog, or portfolio with Astro.
+			</p>
+			<p>
+				This template comes with a few integrations already configured in your
+				<code>astro.config.mjs</code> file. You can customize your setup with
+				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
+				React, or Vue to your project.
+			</p>
+			<p>Here are a few ideas on how to get started with the template:</p>
+			<ul>
+				<li>Edit this page in <code>src/pages/index.astro</code></li>
+				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
+				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
+				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
+				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+			</ul>
+			<p>
+				Have fun! If you get stuck, remember to
+				<a href="https://docs.astro.build/">read the docs</a>
+				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+			</p>
+			<p>
+				Looking for a blog template with a bit more personality? Check out
+				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
+				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>

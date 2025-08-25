@@ -1,0 +1,33 @@
+---
+const today = new Date();
+import NavLink from './NavLink.astro';
+---
+
+<footer>
+	<div class="container mb-3">
+		<ul class="navbar-list">
+			<NavLink href="/versions">How It's Built</NavLink>
+			<NavLink href="https://github.com/jdkhogan">Github</NavLink>
+			<NavLink href="https://www.linkedin.com/in/jeremydhogan">Contact</NavLink>
+		</ul>
+		<a href="#" class="animated-arrow" alt="Back to Top">&#8679;</a>
+	</div>
+	<div class="container copyright">
+		<p>&copy; {today.getFullYear()} Jeremy Hogan. All rights reserved.</p>
+	</div>
+	<!-- <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="../assets/js/script.js"></script> -->
+</footer>
+<style>
+	svg {
+		width: clamp(2rem, 0.8rem + 3.2vw, 3.2rem);
+		height: clamp(2rem, 0.8rem + 3.2vw, 3.2rem);	
+	}
+	.copyright {
+		justify-content: center;
+		p {
+		    font-size: 1.4rem;
+		}
+	}
+</style>

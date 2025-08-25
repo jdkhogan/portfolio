@@ -1,0 +1,18 @@
+---
+import { SITE_TITLE } from '../consts';
+import NavLink from './NavLink.astro';
+---
+
+<header>
+	<nav class="navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/">{SITE_TITLE}</a>
+			<ul class="navbar-list">
+				<NavLink href="/#about">About</NavLink>
+				<NavLink href="/#projectDetails">Projects</NavLink>
+				<NavLink href="https://www.linkedin.com/in/jeremydhogan">Contact</NavLink>
+			</ul>
+		</div>
+        <hr class="scroll-progress">
+	</nav>
+</header>
