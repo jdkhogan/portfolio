@@ -460,6 +460,10 @@ img:not(.logo), video {
         position: relative;
         margin-top: 0;
     }
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+        filter: drop-shadow(0 1px 0 var(--accent-color));
+    }
 
     img, video {
         margin: 0;
